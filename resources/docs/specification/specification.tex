@@ -60,5 +60,107 @@
 		\item \underline{\textbf{Moderar Avaliações:}} Apagar avaliações que sejam desajustadas.
 	\end{itemize}
 
+	\section{Base de Dados}
+
+	Nesta secção está descrita a estrutura da base de dados da plataforma.
+
+	\subsection{Tabela: \textit{Users}} \label{db-table-users}
+
+	Registo de todos os utilizadores da plataforma:
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome do utilizador
+		\item \textbf{\textit{email}} - Email de registo. Serve também como \underline{\textit{username}} para 
+			iniciar sessão na plataforma
+		\item \textbf{\textit{password}} - Nome do utilizador
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Roles}} \label{db-table-roles}
+
+	Tabela auxiliar para grupos de permissão de utilizador:
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome da permissão para visualização ao atribuir a utilizador.
+		\item \textbf{\textit{role}} - Valor numérico usado no servidor para definir qual a permissão dada.
+		\item \textbf{\textit{enable}} - Permite desabilitar a permissão no processamento da plataforma. 
+			De momento não está a ser usado.
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Role\_User}} \label{db-table-role-user}
+
+	Atribui o grupo de permissão de cada utilizador registado:
+
+	\begin{itemize}
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela \underline{\textit{users}}\textsuperscript{\ref{db-table-users}}. Um utilizador pode ter apenas uma permissão (N:1).
+		\item \textbf{\textit{role\_id}} - Identificador da permissão na tabela \underline{\textit{roles}}\textsuperscript{\ref{db-table-roles}}. Uma permissão pode ter vários utilizadores (1:N).
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Configurations}} \label{db-table-configurations}
+
+	Configurações da plataforma passíveis de ser configuradas por utilizador.
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome da configuração a ser apresantado na página de configurações.
+		\item \textbf{\textit{default}} - Valor inicial da configuração.
+		\item \textbf{\textit{role\_id}} - Identificador da permissão na tabela \underline{\textit{roles}}\textsuperscript{\ref{db-table-roles}}. Uma configuração está associada a um dos grupos de permissão (N:1).
+		\item \textbf{\textit{enable}} - Permite desabilitar este tipo de configuração.
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Establishments}} \label{db-table-establishments}
+
+	Caraterísticas de cada estabelecimento criado na plataforma.
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome do estabelecimento.
+		\item \textbf{\textit{address}} - Morada do estabelecimento.
+		\item \textbf{\textit{parish}} - Freguesia do estabelecimento.
+		\item \textbf{\textit{city}} - Cidade do estabelecimento.
+		\item \textbf{\textit{gps}} - Coordenadas GPS da localização do estabelecimento.
+		\item \textbf{\textit{telephone}} - Contato Telefónico principal do estabelecimento.
+		\item \textbf{\textit{telephone2}} - Um contato telefónico alternativo do estabelecimento.
+		\item \textbf{\textit{telephone3}} - Um outro contato telefónico alternativo do estabelecimento.
+		\item \textbf{\textit{email}} - Contato email do estabelecimento.
+		\item \textbf{\textit{card}} - Valor boleano que identifica se o estabelecimento permite pagamento
+			multibanco..
+		\item \textbf{\textit{timetable}} - Horário de funcionamento do estabelecimento.
+		\item \textbf{\textit{obs}} - Outras observações que o criador queira identificar no estabelecimento.
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela 
+			\underline{\textit{users}}\textsuperscript{\ref{db-table-users}} 
+			Um estabelecimento pode ter apenas um utilizador que o criou (N:1).
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Plates}} \label{db-table-plates}
+
+	Pratos de um estabelecimento criados na plataforma.
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome do prato.
+		\item \textbf{\textit{price}} - Preço médio do prato.
+		\item \textbf{\textit{obs}} - Outras observações que o criador queira identificar no prato.
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela 
+			\underline{\textit{users}}\textsuperscript{\ref{db-table-users}} 
+			Um prato pode ter apenas um utilizador que o criou (N:1).
+		\item \textbf{\textit{establishments\_id}} - Identificador do estabelecimento na tabela 
+			\underline{\textit{establishments}}\textsuperscript{\ref{db-table-establishments}} 
+			Um prato pode ter apenas um estabelecimento onde existe (N:1).
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Ratings}} \label{db-table-ratings}
+
+	Tabela que contém os critérios de avaliação disponíveis na plataforma.
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome do critério que será a identificação do que se está a avaliar
+			na página respectiva.
+		\item \textbf{\textit{description}} - Descrição do que o critério pretende avaliar para esclarecer
+			o avaliador..
+		\item \textbf{\textit{type}} - Tipo de critério:
+			\begin{itemize}
+				\item \textbf{0} - Critério do tipo numérico apenas.
+				\item \textbf{1} - Critério do tipo numérico e textual.
+				\item \textbf{2} - Critério do tipo textual apenas.
+			\end{itemize}
+		\item \textbf{\textit{enable}} - Permite desabilitar um critério na página de avaliações.
+	\end{itemize}
 
 \end{document}
