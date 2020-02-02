@@ -1,0 +1,420 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind base;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
+
+/* fixing tailwindcss update */
+html {
+    font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+span {
+    @apply leading-none;
+}
+
+h5 {
+    @apply text-sm font-bold;
+}
+
+h3 {
+    @apply text-xl font-bold;
+}
+
+/* Styles */
+
+body.dark-theme {
+	@apply bg-gray-800 text-white;
+}
+
+.container {
+    padding: 0 0.5rem;
+}
+
+.dashboard-card-list {
+    @apply text-sm mt-3 text-left;
+    ol {
+        list-style-type: decimal;
+        padding-left: theme("padding.4");
+    }
+}
+
+.navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-card-wrapper {
+    @apply p-4;
+}
+
+@screen md {
+    .dashboard-card-wrapper {
+        @apply w-1/2;
+    }
+}
+.dashboard-card {
+    @apply rounded-lg shadow-md border border-gray-500 p-4 flex;
+}
+
+@screen md {
+    .dashboard-card {
+        @apply h-full;
+    }
+}
+
+.dashboard-card-icon {
+    @apply w-1/4 text-center p-2;
+}
+
+.dashboard-card-description {
+    @apply w-3/4 text-center p-2 flex flex-col justify-between;
+}
+
+.btn-std {
+    @apply text-white font-bold py-2 px-4 rounded leading-tight;
+
+    & :focus {
+        @apply outline-none shadow-outline;
+    }
+}
+
+.btn-blue {
+    @apply bg-blue-500;
+    &:hover {
+        @apply bg-blue-600;
+    }
+}
+
+.btn-red {
+    @apply bg-red-500;
+    &:hover {
+        @apply bg-red-600;
+    }
+}
+
+.btn-grey {
+    @apply bg-gray-500;
+    &:hover {
+        @apply bg-gray-600;
+    }
+}
+
+.form-group {
+    @apply mb-4;
+}
+
+.form-label {
+    @apply block text-gray-700 text-sm font-bold mb-2 leading-tight;
+}
+
+body.dark-theme .form-label {
+	@apply text-gray-200;
+}
+
+.form-input {
+    @apply bg-transparent appearance-none border-b w-full py-2 px-3 text-gray-800 leading-tight border-blue-400;
+    &:focus {
+        @apply border-green-400;
+    }
+}
+
+body.dark-theme .form-input {
+	@apply text-gray-200;
+}
+
+.form-input-readonly {
+    @apply italic bg-gray-300;
+}
+
+.form-checkbox-label {
+    @apply flex items-center text-gray-700 text-sm font-bold mb-2 leading-tight;
+}
+
+.form-checkbox {
+    @apply mr-2 leading-tight;
+}
+
+.form-select {
+    @apply shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-800 leading-tight border-gray-400;
+    &:focus {
+        @apply shadow-outline outline-none;
+    }
+}
+
+.form-select-arrow {
+    @apply pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-800;
+    svg {
+        @apply fill-current h-4 w-4;
+    }
+}
+
+.tab-center {
+    @apply flex border-b justify-center;
+}
+
+.tab-item {
+    @apply mr-1;
+    a {
+        @apply bg-white inline-block py-2 px-4 text-gray-600 font-semibold -mb-px border-b no-underline cursor-pointer leading-tight;
+        &:hover {
+            @apply text-black border-b border-black text-black;
+        }
+        &.active {
+            @apply text-teal-500 border-b border-teal-500;
+        }
+    }
+}
+
+.input-validation-error {
+    @apply text-red-400 italic block mt-2;
+}
+
+.page-error-bar {
+    @apply italic py-2 px-3 mx-2 rounded-sm;
+
+    &.error {
+        @apply text-white bg-red-500;
+    }
+
+    &.success {
+        @apply text-white bg-green-600;
+    }
+}
+
+.login-form-label {
+    @apply block text-gray-500 font-bold mb-1 pr-4;
+}
+
+@screen md {
+    .login-form-label {
+        @apply text-right mb-0;
+    }
+}
+
+.login-form-input {
+    @apply bg-gray-200 appearance-none border-2 rounded w-full py-2 px-4 text-gray-800 leading-tight;
+    &:focus {
+        @apply outline-none bg-white border-teal-500;
+    }
+}
+
+.form-center-card {
+    @apply shadow-xl border border-gray-400 rounded-lg px-8 pt-6 pb-8 mb-4 w-full mx-2;
+}
+
+@screen md {
+    .form-center-card {
+        @apply mx-0;
+    }
+}
+
+.users-list-container {
+    margin-top: 2.3rem;
+}
+
+.users-list,
+.users-list-header {
+    @apply w-full py-3 border-b border-solid border-gray-500;
+}
+
+.users-list-header {
+    @apply font-bold text-base hidden;
+}
+
+.users-list-label {
+    @apply font-bold text-base w-1/3 text-right;
+}
+
+.users-list {
+    @apply flex text-base flex-wrap;
+}
+
+.users-list-item {
+    @apply text-left px-3 w-2/3;
+    > a:hover {
+        @apply text-teal-400;
+    }
+}
+
+@screen md {
+    .users-list-label {
+        @apply hidden;
+    }
+
+    .users-list-header {
+        @apply flex;
+    }
+
+    .users-list-item {
+        @apply w-1/5 text-center;
+    }
+
+    .users-list-lg {
+        @apply w-2/5;
+    }
+}
+
+/* Progress bar */
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+   appearance: none;
+
+  width: 100%;
+  
+  	/* Although firefox doesn't provide any additional pseudo class to style the progress element container, any style applied here works on the container. */
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-bar,
+{
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+}
+progress[value]::-moz-progress-bar {
+ 
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+.bar-green::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, $green, $green);
+}
+
+.bar-green::-moz-progress-bar{
+  background-image:
+	    -moz-linear-gradient( 135deg,
+													 transparent,
+													 transparent 33%,
+													 rgba(0,0,0,.1) 33%,
+													 rgba(0,0,0,.1) 66%,
+													 transparent 66%),
+      -moz-linear-gradient( top,
+														rgba(255, 255, 255, .25),
+														rgba(0,0,0,.2)),    
+    -moz-linear-gradient( left, $green, $green);
+}
+
+.bar-red::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, $red, $red);
+}
+
+.bar-red::-moz-progress-bar{
+  background-image:
+	    -moz-linear-gradient( 135deg,
+													 transparent,
+													 transparent 33%,
+													 rgba(0,0,0,.1) 33%,
+													 rgba(0,0,0,.1) 66%,
+													 transparent 66%),
+      -moz-linear-gradient( top,
+														rgba(255, 255, 255, .25),
+														rgba(0,0,0,.2)),    
+      -moz-linear-gradient( left, $red, $red);
+}
+
+$breakpoint-md: theme('screens.md');
+
+.edit-device-title {
+	@apply text-xl italic;
+}
+
+.edit-device-group {
+	@apply my-4;
+	.edit-device-bar {
+		@apply border border-gray-400 p-3 flex justify-between cursor-pointer;
+	}
+	.edit-device-body {
+		@apply border-l border-r border-b border-gray-300 p-3;
+	}
+}

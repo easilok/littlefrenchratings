@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+
+\title{Manual Especificação Plataforma de Gestão de Horários}
+\date{2020-02-01}
+\author{Luís Pereira}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+	\pagenumbering{arabic}
+
+	\section{Introdução}
+	
+	O objectivo desta plataforma será criar um local único e de fácil interação que permita a um estabelecimento
+	de prestação de serviço por marcação gerir os seus atendimentos, gerir os seus clientes e caraterísticas 
+	específicas para cada cliente, e manter um histórico do serviço feito para consulta futura. 
+
+	Por outro lado, pretende-se que os clientes possam visualizar e marcar o melhor horário para serem atendidos.
+
+	Esta plataforma será criada com vista em estabelecimentos como cabeleireiros, mas o modo de funcionamento aplica-se
+	a estabelecimentos com marcação, como consultórios médicos, aulas, explicações, etc.
+
+
+	\section{Modos de Interação}
+
+	\subsection{Cliente}
+
+	Todos os utilizadores criados na plataforma são clientes, onde será possível efetuar as operações descritas
+	abaixo. No entanto, do lado do estabelecimento, um utilizador só é considerado cliente quanto tem pelo menos
+	uma marcação efetuada. 
+
+	\begin{itemize}
+		\item \textbf{Gerir conta:} O cliente cria uma conta na plataforma com os seus dados pessoais:
+			nome, contatos, morada, NIF \textit{(será usado para emissão de fatura)}, etc.
+		\item \textbf{Gerir Marcações:} O cliente poderá aceder à página do estabelecimento e efetuar uma
+			marcação. Para tal, escolherá o serviço que pretende que lhe seja prestado, onde surgirá
+			um calendário com os intervalos disponíveis para marcação. O tempo necessário terá de considerar 
+			se existe um tempo excepcional para aquele serviço naquele cliente atribuído pelo estabelecimento, 
+			caso contrário, usará o tempo definido para aquele serviço no geral. Também será possível ao cliente
+			cancelar uma marcação efetuada na plataforma.
+		\item \textbf{Avaliação de Marcações:} Deverá existir uma forma de o cliente avaliar o serviço prestado,
+			onde poderá deixar uma mensagem na sua avaliação, e atribuir fotografias com o resultado final. Este
+			módulo poderá ser desativado por o estabelecimento. No entanto, irá existir uma forma de o cliente
+			deixar notas pessoais sobre um serviço, que serão visíveis só por ele para referência futura numa
+			nova marcação.
+	\end{itemize}
+
+	\subsection{Estabelecimento}
+
+	Qualquer utilizador poderá criar um estabelecimento, que será associado a si como gestor. Mesmo tendo um 
+	estabelecimento, a conta de utilizador funcionará como cliente onde poderá efetuar marcações em qualquer
+	local incluíndo o seu próprio.
+
+	Do lado do login do estabelecimento será possível:
+
+	\begin{itemize}
+		\item \textbf{Gerir caraterísticas do estabelecimento:} Localização, Contactos, 
+			Horário de Funcionamento (usado depois para as marcações), etc. Alguns módulos poderão ser configurados
+			aqui, tais como a permissão de avaliações por parte dos clientes.
+		\item \textbf{Gestão de Recursos Humanos:} Associar trabalhadores, 
+			quais as serviços que prestam, texto descritivo.
+		\item \textbf{Configurar serviços:} Criar e associar serviços prestados, 
+			preços e tempos de execução.
+		\item \textbf{Gestão de Marcações:} Visualizar Marcações, bloquear horários, atribuir marcações
+			a funcionários. Também será possível associar observações e fotografias a uma marcação após ser 
+			concluída, o que possibilitará consulta futura como referência. Ao funcionário será sempre possível
+			atribuir-se a um serviço.
+		\item \textbf{Gestão de Clientes:} Para um cliente do estabelecimento, será possível associar um texto
+			descritivo (para uso interno), e atribuir um tempo para determinado serviço excepcional. Deverá ser possível
+			a um funcionário atribuir um comentário a um cliente, para referência futura. Este comentário poderá ou não
+			ser visível para todos os trabalhadores do estabelecimento. As fotografias serão sempre visíveis por todos.
+	\end{itemize}
+
+	Deverá existir um conjunto de permissões por trabalhador associado ao estabelecimento que permite ao gestor
+	definir quem, para além dele, poderá executar algumas das tarefas indicadas. O gestor será sempre o utilizador
+	da plataforma que criou o estabelecimento.
+
+
+
+\end{document}
