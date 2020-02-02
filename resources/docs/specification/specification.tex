@@ -1,4 +1,7 @@
-\documentclass[12pt]{article}
+\documentclass[11pt, a4paper, sans]{article}
+%% For iso-8859-1 (latin1), comment next line and uncomment the second line
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
 
 \title{Especificação Plataforma de Avaliação de Francesinhas}
 \date{2020-02-02}
@@ -12,7 +15,50 @@
 
 	\section{Introdução}
 	
+	O objetivo desta plataforma será gerir marcação de provas de pratos gastronómicos e posterior
+	avaliação dos mesmos. A plataforma terá registos de estabelecimentos e seus pratos. Será possível marcar
+	uma prova de um prato, associando utilizadores ao prato em determinada data. 
+
+	Cada utilizador terá a sua página pessoal onde mostrará as provas seguintes, bem como um histórico das 
+	suas avaliações.
+
+	Será possível avaliar cada prato em vários critérios, que serão configuráveis e expansíveis.
+
+	Na página pessoal de cada utilizador, as provas terão um \textit{url} na morada/gps que permitirá 
+	facilmente abrir o gps para a deslocação ao estabelecimento correspondente.
+
+	A plataforma será criada para uma rota de provas de francesinhas, mas poderá facilmente ser 
+	usado em qualquer prato.
+
 	\section{Modos de Interação}
+
+	\subsection{Utilizador Base}
+
+	Todos os utilizadores registados poderão fazer as operações:
+
+	\begin{itemize}
+		\item \underline{\textbf{Gerir Marcações:}} Criar uma marcação de prova para si, ou cancelar uma existente;
+		\item \underline{\textbf{Gerir Avaliações:}} Criar e editar uma avaliação feita a um prato.
+	\end{itemize}
+
+	\subsection{Utilizador Avançado}
+
+	Os utilizadores avançados recebem algumas novas permissões face ao base:
+
+	\begin{itemize}
+		\item \underline{\textbf{Gerir Estabelecimentos:}} Criar e editar estabelecimentos na plataforma.
+		\item \underline{\textbf{Gerir Pratos:}} Criar e editar pratos e associar fotos ao mesmo.
+		\item \underline{\textbf{Gerir Marcações:}} Criar uma marcação com qualquer utilizador da plataforma;
+	\end{itemize}
+
+	\subsection{Administração}
+	Os administradores da plataforma terão as permissões totais, adicionando:
+	\begin{itemize}
+		\item \underline{\textbf{Gerir Critérios Avaliação:}} Criar e editar os critérios de avaliação de pratos.
+		\item \underline{\textbf{Gerir Utilizadores:}} Os utilizadores serão de registo por pedido. Os administradores
+			terão a capacidade de adicionar e editar todos os utilizadores e suas permissões.
+		\item \underline{\textbf{Moderar Avaliações:}} Apagar avaliações que sejam desajustadas.
+	\end{itemize}
 
 
 \end{document}
