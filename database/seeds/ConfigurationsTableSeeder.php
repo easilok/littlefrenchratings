@@ -16,6 +16,7 @@ class ConfigurationsTableSeeder extends Seeder
 
 				Configuration::create(array(
 					'name' => 'Theme',
+					'default' => 'dark',
 					'role_id' => 0,
 				));
     }

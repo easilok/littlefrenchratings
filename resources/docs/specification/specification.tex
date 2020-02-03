@@ -2,16 +2,28 @@
 %% For iso-8859-1 (latin1), comment next line and uncomment the second line
 \usepackage[utf8]{inputenc}
 %\usepackage[latin1]{inputenc}
+%\usepackage[margin=3in]{geometry}
+\usepackage[a4paper]{geometry}
+%\usepackage{showframe}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+%linespacing
+\linespread{1.2} 
+\usepackage{indentfirst}
 
 \title{Especificação Plataforma de Avaliação de Francesinhas}
 \date{2020-02-02}
 \author{Luís Pereira}
+
 
 \begin{document}
 	\pagenumbering{gobble}
 	\maketitle
 	\newpage
 	\pagenumbering{arabic}
+	
+	\tableofcontents
+	\newpage
 
 	\section{Introdução}
 	
@@ -42,6 +54,75 @@
 	\end{itemize}
 
 	\subsection{Utilizador Avançado}
+<<<<<<< HEAD
+
+	Os utilizadores avançados recebem algumas novas permissões face ao base:
+
+	\begin{itemize}
+		\item \underline{\textbf{Gerir Estabelecimentos:}} Criar e editar estabelecimentos na plataforma.
+		\item \underline{\textbf{Gerir Pratos:}} Criar e editar pratos e associar fotos ao mesmo.
+		\item \underline{\textbf{Gerir Marcações:}} Criar uma marcação com qualquer utilizador da plataforma;
+	\end{itemize}
+
+	\subsection{Administração}
+	Os administradores da plataforma terão as permissões totais, adicionando:
+	\begin{itemize}
+		\item \underline{\textbf{Gerir Critérios Avaliação:}} Criar e editar os critérios de avaliação de pratos.
+		\item \underline{\textbf{Gerir Utilizadores:}} Os utilizadores serão de registados pelos administradores,
+			que terão a capacidade de adicionar e editar todos os utilizadores e suas permissões.
+		\item \underline{\textbf{Moderar Avaliações:}} Apagar avaliações que sejam desajustadas.
+	\end{itemize}
+
+	\section{Base de Dados}
+
+	Nesta secção está descrita a estrutura da base de dados da plataforma.
+
+	\subsection{Tabela: \textit{Users}} \label{db-table-users}
+
+	Registo de todos os utilizadores da plataforma:
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome do utilizador
+		\item \textbf{\textit{email}} - Email de registo. Serve também como \underline{\textit{username}} para 
+			iniciar sessão na plataforma
+		\item \textbf{\textit{password}} - Nome do utilizador
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Roles}} \label{db-table-roles}
+
+	Tabela auxiliar para grupos de permissão de utilizador:
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome da permissão para visualização ao atribuir a utilizador.
+		\item \textbf{\textit{role}} - Valor numérico usado no servidor para definir qual a permissão dada.
+		\item \textbf{\textit{enable}} - Permite desabilitar a permissão no processamento da plataforma. 
+			De momento não está a ser usado.
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Role\_User}} \label{db-table-role-user}
+
+	Atribui o grupo de permissão de cada utilizador registado:
+
+	\begin{itemize}
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela \underline{\textit{users}} \textsuperscript{\ref{db-table-users}}. Um utilizador pode ter apenas uma permissão (N:1).
+		\item \textbf{\textit{role\_id}} - Identificador da permissão na tabela \underline{\textit{roles}} \textsuperscript{\ref{db-table-roles}}. Uma permissão pode ter vários utilizadores (1:N).
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Configurations}} \label{db-table-configurations}
+
+	Configurações da plataforma passíveis de ser configuradas por utilizador.
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome da configuração a ser apresantado na página de configurações.
+		\item \textbf{\textit{default}} - Valor inicial da configuração.
+		\item \textbf{\textit{role\_id}} - Identificador da permissão na tabela \underline{\textit{roles}} \textsuperscript{\ref{db-table-roles}}. Uma configuração está associada a um dos grupos de permissão (N:1).
+		\item \textbf{\textit{enable}} - Permite desabilitar este tipo de configuração.
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Establishments}} \label{db-table-establishments}
+
+	Caraterísticas de cada estabelecimento criado na plataforma.
+=======
 
 	Os utilizadores avançados recebem algumas novas permissões face ao base:
 
@@ -59,6 +140,114 @@
 			terão a capacidade de adicionar e editar todos os utilizadores e suas permissões.
 		\item \underline{\textbf{Moderar Avaliações:}} Apagar avaliações que sejam desajustadas.
 	\end{itemize}
+>>>>>>> master
 
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome do estabelecimento.
+		\item \textbf{\textit{address}} - Morada do estabelecimento.
+		\item \textbf{\textit{parish}} - Freguesia do estabelecimento.
+		\item \textbf{\textit{city}} - Cidade do estabelecimento.
+		\item \textbf{\textit{gps}} - Coordenadas GPS da localização do estabelecimento.
+		\item \textbf{\textit{telephone}} - Contato Telefónico principal do estabelecimento.
+		\item \textbf{\textit{telephone2}} - Um contato telefónico alternativo do estabelecimento.
+		\item \textbf{\textit{telephone3}} - Um outro contato telefónico alternativo do estabelecimento.
+		\item \textbf{\textit{email}} - Contato email do estabelecimento.
+		\item \textbf{\textit{card}} - Valor boleano que identifica se o estabelecimento permite pagamento
+			multibanco..
+		\item \textbf{\textit{timetable}} - Horário de funcionamento do estabelecimento.
+		\item \textbf{\textit{obs}} - Outras observações que o criador queira identificar no estabelecimento.
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela 
+			\underline{\textit{users}} \textsuperscript{\ref{db-table-users}} 
+			Um estabelecimento pode ter apenas um utilizador que o criou (N:1).
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Plates}} \label{db-table-plates}
+
+	Pratos de um estabelecimento criados na plataforma.
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome do prato.
+		\item \textbf{\textit{price}} - Preço médio do prato.
+		\item \textbf{\textit{obs}} - Outras observações que o criador queira identificar no prato.
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela 
+			\underline{\textit{users}} \textsuperscript{\ref{db-table-users}} 
+			Um prato pode ter apenas um utilizador que o criou (N:1).
+		\item \textbf{\textit{establishments\_id}} - Identificador do estabelecimento na tabela 
+			\underline{\textit{establishments}} \textsuperscript{\ref{db-table-establishments}} 
+			Um prato pode ter apenas um estabelecimento onde existe (N:1).
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Tastes}} \label{db-table-tastes}
+	
+	Tabela que contém as provas de pratos marcadas por utilizador.
+	
+	\begin{itemize}
+		\item \textbf{\textit{plate\_id}} - Identificador do prato que será provado, na tabela 
+			\underline{\textit{plates}} \textsuperscript{\ref{db-table-plates}}. 
+			Uma avaliação tem apenas um prato avaliado (N:1).
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador que irá atender à prova na tabela 
+			\underline{\textit{users}} \textsuperscript{\ref{db-table-users}}.
+			Uma avaliação tem apenas um utilizador que a criou (N:1).	
+		\item \textbf{\textit{date}} - Data a que se realizará/realizou a prova.		
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Ratings}} \label{db-table-ratings}
+
+	Tabela que contém os critérios de avaliação disponíveis na plataforma.
+
+	\begin{itemize}
+		\item \textbf{\textit{name}} - Nome do critério que será a identificação do que se está a avaliar
+			na página respectiva.
+		\item \textbf{\textit{description}} - Descrição do que o critério pretende avaliar para esclarecer
+			o avaliador.
+		\item \textbf{\textit{type}} - Tipo de critério:
+			\begin{itemize}
+				\item \textbf{0} - Critério do tipo numérico apenas.
+				\item \textbf{1} - Critério do tipo numérico e textual.
+				\item \textbf{2} - Critério do tipo textual apenas.
+			\end{itemize}
+		\item \textbf{\textit{enable}} - Permite desabilitar um critério na página de avaliações.
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Plate\_Rating}} \label{db-table-plate-rating}
+	
+	Tabela que associa uma avaliação de um prato, por um utilizador numa determinada prova. 
+	
+	Uma avaliação tem de ser única no conjunto \underline{\textbf{Prato + Prova + Utilizador + Critério}}.
+	
+	\begin{itemize}
+		\item \textbf{\textit{plate\_id}} - Identificador do prato em avaliação, na tabela 
+			\underline{\textit{plates}} \textsuperscript{\ref{db-table-plates}}. 
+			Uma avaliação tem apenas um prato avaliado (N:1).
+		\item \textbf{\textit{rating\_id}} - Identifica o critério de avaliação na tabela 
+			\underline{\textit{ratings}} \textsuperscript{\ref{db-table-ratings}}.
+			Uma avaliação tem apenas um critério avaliado (N:1).
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador que realizou a avaliação na tabela 
+			\underline{\textit{users}} \textsuperscript{\ref{db-table-users}}.
+			Uma avaliação tem apenas um utilizador que a criou (N:1).
+		\item \textbf{\textit{taste\_id}} - Identificador do utilizador que realizou a avaliação na tabela 
+			\underline{\textit{tastes}} \textsuperscript{\ref{db-table-tastes}}.
+			Uma avaliação tem apenas uma prova/visita em que foi realizada (N:1).
+		\item \textbf{\textit{rating\_value}} - Avaliação atribuída na parte numérica do critério em questão.
+		\item \textbf{\textit{rating\_text}} - Avaliação atribuída na parte textual do critério em questão.
+		\item \textbf{\textit{price}} - Preço pago pelo prato na visita em avaliação, o que permite um histórico
+			evolutivo de preços, visto do cliente.
+	\end{itemize}
+
+	\subsection{Tabela: \textit{Images}} \label{db-table-plate-images}
+
+	Tabela que permite a associação de várias fotografias carregadas para o sistema ao prato a que correspondem. 
+	
+	\begin{itemize}
+		\item \textbf{\textit{path}} - Caminho para a localização da imagem.
+		\item \textbf{\textit{order}} - Ordem com que a imagem aparecerá no slideshow do prato.
+		\item \textbf{\textit{visible}} - Permite não mostrar a imagem na página do prato, não a removendo do sistema.		
+		\item \textbf{\textit{plate\_id}} - Identificador do prato a que a imagem corresponde, na tabela 
+		\underline{\textit{plates}} \textsuperscript{\ref{db-table-plates}}. 
+		Uma imagem tem apenas um prato avaliado (N:1).
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador que adicionou a imagem na tabela 
+		\underline{\textit{users}} \textsuperscript{\ref{db-table-users}}.
+		Uma imagem tem apenas um utilizador que a criou (N:1).
+	\end{itemize}
 
 \end{document}

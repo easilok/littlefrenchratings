@@ -26,13 +26,16 @@ class CreateRatingsTable extends Migration
 						$table->unsignedBigInteger('plate_id');
 						$table->unsignedBigInteger('rating_id');
 						$table->unsignedBigInteger('user_id');
+						$table->unsignedBigInteger('taste_id');
 						$table->unsignedInteger('rating_value');
 						$table->text('rating_text');
+						$table->float('price', 6, 2)->default(0);
 						$table->timestamps();
 						$table->foreign('plate_id')->references('id')->on('plates')->onDelete('cascade');
 						$table->foreign('rating_id')->references('id')->on('ratings')->onDelete('cascade');
 						$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-						$table->primary(['plate_id', 'rating_id', 'user_id']);
+						$table->foreign('taste_id')->references('id')->on('tastes')->onDelete('cascade');
+						$table->primary(['plate_id', 'rating_id', 'user_id', 'taste_id']);
 				});
     }
 
