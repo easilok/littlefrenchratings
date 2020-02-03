@@ -1,14 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.1)  2 FEB 2020 23:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.2.3)  3 FEB 2020 11:51
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**specification.tex
-(./specification.tex
-LaTeX2e <2019-10-01> patch level 1
-(/usr/share/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+**./specification.tex
+(specification.tex
+LaTeX2e <2019-10-01> patch level 3
+("D:\Programas\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2019/10/25 v1.4k Standard LaTeX document class
+("D:\Programas\MiKTeX 2.9\tex/latex/base\size11.clo"
+File: size11.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -22,104 +20,163 @@ File: size11.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+("D:\Programas\MiKTeX 2.9\tex/latex/base\inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
+)
+("D:\Programas\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("D:\Programas\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("D:\Programas\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+("D:\Programas\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks17
+
+("D:\Programas\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
+("D:\Programas\MiKTeX 2.9\tex/latex/psnfss\helvet.sty"
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+("D:\Programas\MiKTeX 2.9\tex/latex/tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 
 LaTeX Warning: Unused global option(s):
     [sans].
 
-(./specification.aux)
+(specification.aux)
 \openout1 = `specification.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 12.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 12.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 12.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (11.68916pt too wide) in paragraph at lines 22--24
-[]\OT1/cmr/m/n/10.95 Cada uti-lizador ter^^Sa a sua p^^Sagina pes-soal onde mos
-trar^^Sa as provas seguintes,
- []
-
-
-Overfull \hbox (4.90623pt too wide) in paragraph at lines 25--26
-[]\OT1/cmr/m/n/10.95 Ser^^Sa poss^^S^^Pvel avaliar cada prato em v^^Sarios crit
-^^Serios, que ser~ao con-figur^^Saveis
- []
-
-
-Overfull \hbox (10.3264pt too wide) in paragraph at lines 27--29
-[]\OT1/cmr/m/n/10.95 Na p^^Sagina pes-soal de cada uti-lizador, as provas ter~a
-o um \OT1/cmr/m/it/10.95 url \OT1/cmr/m/n/10.95 na morada/gps
- []
-
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 4
-0.
-(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
+9.
+ ("D:\Programas\MiKTeX 2.9\tex/latex/psnfss\ot1phv.fd"
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.3571pt
+* \topmargin=-7.86334pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 40.
+(Font)              <12> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 21.
+[1
 
-Overfull \hbox (18.36305pt too wide) in paragraph at lines 49--50
-[]$[]$ \OT1/cmr/m/n/10.95 Criar e ed-i-tar es-ta-b-elec-i-men-tos na plataforma
-. 
- []
+{C:/Users/lcp/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 25.
 
-[1]
-Overfull \hbox (16.22382pt too wide) in paragraph at lines 85--87
-[]\OT1/cmr/bx/it/10.95 enable \OT1/cmr/m/n/10.95 - Per-mite desabil-i-tar a per
--miss~ao no pro-ces-sa-mento da plataforma.
- []
+(specification.toc
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 7.
+)
+\tf@toc=\write3
+\openout3 = `specification.toc'.
+
+ [1]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 47.
+LaTeX Font Info:    Trying to load font information for OMS+phv on input line 5
+2.
+ ("D:\Programas\MiKTeX 2.9\tex/latex/psnfss\omsphv.fd"
+File: omsphv.fd 
+)
+LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
 
 [2]
-Overfull \hbox (52.6401pt too wide) in paragraph at lines 143--146
-[]\OT1/cmr/bx/it/10.95 establishments[]id \OT1/cmr/m/n/10.95 - Iden-ti-fi-cador
- do es-ta-b-elec-i-mento na tabela $[]$$[]$
- []
-
-[3] [4] (./specification.aux) ) 
+LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <12> not available
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 79.
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <12> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 79.
+LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 84.
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 84.
+ [3] [4] [5] [6] (specification.aux) ) 
 Here is how much of TeX's memory you used:
- 304 strings out of 492167
- 3596 string characters out of 6131559
- 67978 words of memory out of 5000000
- 4733 multiletter control sequences out of 15000+600000
- 9875 words of font info for 34 fonts, out of 8000000 for 9000
+ 956 strings out of 492484
+ 13398 string characters out of 3132858
+ 83860 words of memory out of 3000000
+ 5327 multiletter control sequences out of 15000+200000
+ 25241 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,7n,24p,252b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on specification.pdf (5 pages, 113209 bytes).
+ 30i,7n,24p,255b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Programas/MiKTeX 2.9/fonts/enc/dvips/
+base/8r.enc}<D:/Programas/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<D:/Programas/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Programas/MiKT
+eX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><D:/Programas/MiKTeX 2.9/fonts/type
+1/urw/helvetic/uhvr8a.pfb><D:/Programas/MiKTeX 2.9/fonts/type1/urw/helvetic/uhv
+ro8a.pfb>
+Output written on specification.pdf (7 pages, 61571 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
