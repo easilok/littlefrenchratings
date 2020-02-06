@@ -54,7 +54,6 @@
 	\end{itemize}
 
 	\subsection{Utilizador Avançado}
-<<<<<<< HEAD
 
 	Os utilizadores avançados recebem algumas novas permissões face ao base:
 
@@ -119,28 +118,19 @@
 		\item \textbf{\textit{enable}} - Permite desabilitar este tipo de configuração.
 	\end{itemize}
 
+	\subsection{Tabela: \textit{Configuration\_User}} \label{db-table-configuration-user}
+
+	Configurações associadas a cada utilizador.
+
+	\begin{itemize}
+		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela \underline{\textit{users}} \textsuperscript{\ref{db-table-users}}. Um utilizador terá várias configurações (N:N).
+		\item \textbf{\textit{configuration\_id}} - Identificador da configuração na tabela \underline{\textit{configurations}} \textsuperscript{\ref{db-table-configuration-user}}. Uma configuração tem vários utilizadores que a possuem (N:N).
+		\item \textbf{\textit{value}} - Valor configurado pelo utilizador. Inicia com o valor \textit{default} na tabela \underline{\textit{configurations}} \textsuperscript{\ref{db-table-configuration-user}}.
+	\end{itemize}
+
 	\subsection{Tabela: \textit{Establishments}} \label{db-table-establishments}
 
 	Caraterísticas de cada estabelecimento criado na plataforma.
-=======
-
-	Os utilizadores avançados recebem algumas novas permissões face ao base:
-
-	\begin{itemize}
-		\item \underline{\textbf{Gerir Estabelecimentos:}} Criar e editar estabelecimentos na plataforma.
-		\item \underline{\textbf{Gerir Pratos:}} Criar e editar pratos e associar fotos ao mesmo.
-		\item \underline{\textbf{Gerir Marcações:}} Criar uma marcação com qualquer utilizador da plataforma;
-	\end{itemize}
-
-	\subsection{Administração}
-	Os administradores da plataforma terão as permissões totais, adicionando:
-	\begin{itemize}
-		\item \underline{\textbf{Gerir Critérios Avaliação:}} Criar e editar os critérios de avaliação de pratos.
-		\item \underline{\textbf{Gerir Utilizadores:}} Os utilizadores serão de registo por pedido. Os administradores
-			terão a capacidade de adicionar e editar todos os utilizadores e suas permissões.
-		\item \underline{\textbf{Moderar Avaliações:}} Apagar avaliações que sejam desajustadas.
-	\end{itemize}
->>>>>>> master
 
 	\begin{itemize}
 		\item \textbf{\textit{name}} - Nome do estabelecimento.
@@ -153,7 +143,7 @@
 		\item \textbf{\textit{telephone3}} - Um outro contato telefónico alternativo do estabelecimento.
 		\item \textbf{\textit{email}} - Contato email do estabelecimento.
 		\item \textbf{\textit{card}} - Valor boleano que identifica se o estabelecimento permite pagamento
-			multibanco..
+			multibanco.
 		\item \textbf{\textit{timetable}} - Horário de funcionamento do estabelecimento.
 		\item \textbf{\textit{obs}} - Outras observações que o criador queira identificar no estabelecimento.
 		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela 
