@@ -10,6 +10,11 @@ class Role extends Model
 			'created_at', 'updated_at'
 		];
 
+		protected $casts = [
+			'role' => 'integer',
+			'enable' => 'boolean'
+		];
+
     public function users() {
       return $this->belongsToMany('App\User')->using('App\Models\RoleUser');
     }

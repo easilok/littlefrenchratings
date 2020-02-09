@@ -168,6 +168,13 @@ body.dark-theme {
     }
 }
 
+.btn-platform {
+	background-color: $platformMainColor;
+	&:hover {
+		background-color: $platformMainColorHover;
+	}
+}
+
 .form-group {
     @apply mb-4;
 }
@@ -183,7 +190,8 @@ body.dark-theme .form-label {
 .form-input {
     @apply bg-transparent appearance-none border-b w-full py-2 px-3 text-gray-800 leading-tight border-blue-400;
     &:focus {
-        @apply border-green-400;
+        // @apply border-green-400;
+				border-color: $platformMainColor;
     }
 }
 
@@ -250,6 +258,7 @@ body.dark-theme .form-input {
     }
 }
 
+/*
 .login-form-label {
     @apply block text-gray-500 font-bold mb-1 pr-4;
 }
@@ -266,6 +275,7 @@ body.dark-theme .form-input {
         @apply outline-none bg-white border-teal-500;
     }
 }
+*/
 
 .form-center-card {
     @apply shadow-xl border border-gray-400 rounded-lg px-8 pt-6 pb-8 mb-4 w-full mx-2;
@@ -288,6 +298,7 @@ body.dark-theme .form-input {
 
 .users-list-header {
     @apply font-bold text-base hidden;
+		color: $platformMainColor;
 }
 
 .users-list-label {
@@ -301,8 +312,15 @@ body.dark-theme .form-input {
 .users-list-item {
     @apply text-left px-3 w-2/3;
     > a:hover {
-        @apply text-teal-400;
+        // @apply text-teal-400;
+				color: $platformMainColor;
     }
+		.stop-color-start {
+			stop-color: $platformGradientStart;
+		}
+		.stop-color-end {
+			stop-color: $platformGradientEnd;
+		}
 }
 
 @screen md {
@@ -315,11 +333,15 @@ body.dark-theme .form-input {
     }
 
     .users-list-item {
-        @apply w-1/5 text-center;
+        @apply w-2/12 text-center;
     }
 
     .users-list-lg {
-        @apply w-2/5;
+        @apply w-5/12;
+    }
+
+    .users-list-sm {
+        @apply w-1/12;
     }
 }
 
@@ -416,5 +438,22 @@ $breakpoint-md: theme('screens.md');
 	}
 	.edit-device-body {
 		@apply border-l border-r border-b border-gray-300 p-3;
+	}
+}
+
+.bg-platform-color {
+	background-color: $platformMainColor;
+}
+.text-platform-color {
+	color: $platformMainColor;
+}
+.hover\:bg-platform-color{
+	&:hover {
+		background-color: $platformMainColorHover;
+	}
+}
+.hover\:text-platform-color{
+	&:hover {
+		background-color: $platformMainColorHover;
 	}
 }

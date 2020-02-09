@@ -11,6 +11,11 @@ class Establishment extends Model
 		'created_at', 'updated_at'
 	];
 
+	protected $casts = [
+		'card' => 'boolean',
+		'user_id' => 'integer',
+	];
+
 	public function user() {
 		return $this->belongsTo('App\User');
 	}

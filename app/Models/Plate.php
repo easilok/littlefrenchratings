@@ -11,6 +11,12 @@ class Plate extends Model
 		'created_at', 'updated_at'
 	];
 
+	protected $casts = [
+		'price' => 'float',
+		'user_id' => 'integer',
+		'establishment_id' => 'integer'
+	];
+
 	public function user() {
 		return $this->belongsTo('App\User');
 	}

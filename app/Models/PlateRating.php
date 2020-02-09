@@ -18,7 +18,6 @@ class PlateRating extends Model
 		'user_id' => 'integer',
 		'taste_id' => 'integer',
 		'rating_value' => 'integer',
-		'price' => 'float',
 	];
 
 	public function plate() {

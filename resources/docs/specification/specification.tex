@@ -124,7 +124,9 @@
 
 	\begin{itemize}
 		\item \textbf{\textit{user\_id}} - Identificador do utilizador na tabela \underline{\textit{users}} \textsuperscript{\ref{db-table-users}}. Um utilizador terá várias configurações (N:N).
-		\item \textbf{\textit{configuration\_id}} - Identificador da configuração na tabela \underline{\textit{configurations}} \textsuperscript{\ref{db-table-configuration-user}}. Uma configuração tem vários utilizadores que a possuem (N:N).
+		\item \textbf{\textit{configuration\_id}} - Identificador da configuração na tabela \underline{\textit{configurations}} \textsuperscript{\ref{db-table-configuration-user}}. 
+
+			Uma configuração tem vários utilizadores que a possuem (N:N).
 		\item \textbf{\textit{value}} - Valor configurado pelo utilizador. Inicia com o valor \textit{default} na tabela \underline{\textit{configurations}} \textsuperscript{\ref{db-table-configuration-user}}.
 	\end{itemize}
 
@@ -179,6 +181,8 @@
 			\underline{\textit{users}} \textsuperscript{\ref{db-table-users}}.
 			Uma avaliação tem apenas um utilizador que a criou (N:1).	
 		\item \textbf{\textit{date}} - Data a que se realizará/realizou a prova.		
+		\item \textbf{\textit{price}} - Preço pago pelo prato na visita em causa, o que permite um histórico
+			evolutivo de preços, visto do cliente.
 	\end{itemize}
 
 	\subsection{Tabela: \textit{Ratings}} \label{db-table-ratings}
@@ -220,8 +224,6 @@
 			Uma avaliação tem apenas uma prova/visita em que foi realizada (N:1).
 		\item \textbf{\textit{rating\_value}} - Avaliação atribuída na parte numérica do critério em questão.
 		\item \textbf{\textit{rating\_text}} - Avaliação atribuída na parte textual do critério em questão.
-		\item \textbf{\textit{price}} - Preço pago pelo prato na visita em avaliação, o que permite um histórico
-			evolutivo de preços, visto do cliente.
 	\end{itemize}
 
 	\subsection{Tabela: \textit{Images}} \label{db-table-plate-images}

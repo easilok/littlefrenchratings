@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 window.Vue = require('vue');
 window.Moment = require("moment");
@@ -32,6 +32,10 @@ window.Moment.locale("pt");
 
 Vue.prototype.App = window.App;
 
+Vue.component("navbar", require("./components/navbarDroppable.vue").default);
+
 const app = new Vue({
     el: '#app',
+		components: {
+		}
 });

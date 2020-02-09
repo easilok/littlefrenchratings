@@ -1,0 +1,100 @@
+// Variables
+@import 'variables';
+
+.navbar-balance {
+	@apply flex items-center justify-between flex-wrap py-5 px-4;
+	/*@apply bt-teal-500;*/
+	background-image: linear-gradient(
+		to bottom right,
+		$platformGradientStart,
+		$platformGradientEnd
+	);
+}
+
+.navbar-link {
+	@apply no-underline block mr-4 leading-none tracking-wide border-l-4 border-transparent pl-2 cursor-pointer;
+	color: $platformNavTextColor;
+	&:hover {
+		color: $platformNavHoverColor;
+		border-color: $platformNavHoverColor;
+	}
+	&.navbar-link-margins {
+		@apply mt-4;
+	}
+}
+
+.navbar-open-icon {
+	@apply flex items-center px-3 py-2 border rounded;
+	color:$platformTextColor;
+	border-color: $platformTextColor;
+	&:hover {
+		border-color: $platformMainColor;
+		color: $platformMainColor;
+	}
+}
+
+@screen md {
+	.navbar-link {
+		@apply inline-block;
+		&.navbar-link-margins {
+			@apply mt-0;
+		}
+	}
+}
+
+@screen md {
+	.md\:leading-28 {
+		line-height: 2.8;
+	}
+}
+
+.navbar-menu-group {
+	@apply relative block;
+}
+
+@screen md {
+	.navbar-menu-group {
+		@apply inline-block;
+	}
+}
+
+.navbar-dropdown-group {
+	@apply ml-1 mt-2 px-2 py-1 border-l-4 border-transparent w-full overflow-y-visible leading-loose;
+}
+
+.navbar-dropdown-item {
+	@apply no-underline mr-4 tracking-wide border-l-4 border-transparent pl-2 cursor-pointer;
+	color: $platformNavTextColor;
+	&:hover {
+		color: $platformNavHoverColor;
+		border-color: $platformNavHoverColor;
+	}
+}
+
+@screen md {
+	.navbar-dropdown-group {
+		@apply absolute w-40 rounded shadow-md;
+		background-color: $platformNavDropdownBg;
+	}
+
+	.navbar-dropdown-item {
+		@apply mr-0;
+		color: $platformNavDropdownText;
+		&:hover {
+			color: $platformNavHoverColor;
+			border-color: $platformNavHoverColor;
+		}
+	}
+}
+
+.svg-list-icon {
+	height: 0.5rem;
+	margin-right: 0.2rem;
+	@apply inline-block;
+}
+
+@screen md {
+	.svg-list-icon {
+		@apply hidden;
+	}
+}
