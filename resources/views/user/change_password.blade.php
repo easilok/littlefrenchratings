@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto">
+<div class="container mx-auto center-card-container">
     @if ($errors->any())
     <div class="italic bg-gray-300 text-red-500 px-6">
         <ul class="list-disc">

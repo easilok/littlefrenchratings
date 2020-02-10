@@ -321,6 +321,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -497,7 +498,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Navbar */\n.navbar-balance {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n  flex-wrap: wrap;\n  padding-top: 1.25rem;\n  padding-bottom: 1.25rem;\n  padding-left: 1rem;\n  padding-right: 1rem;\n  /*@apply bt-teal-500;*/\n  background-image: -webkit-gradient(linear, left top, right bottom, from(#ed8936), to(#feebc8));\n  background-image: linear-gradient(to bottom right, #ed8936, #feebc8);\n}\n.navbar-link {\n  text-decoration: none;\n  display: block;\n  margin-right: 1rem;\n  line-height: 1;\n  letter-spacing: 0.025em;\n  border-left-width: 4px;\n  border-color: transparent;\n  padding-left: 0.5rem;\n  cursor: pointer;\n  color: #e6fffa;\n}\n.navbar-link:hover {\n  color: #4a5568;\n  border-color: #4a5568;\n}\n.navbar-link.navbar-link-margins {\n  margin-top: 1rem;\n}\n.navbar-open-icon {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  padding-left: 0.75rem;\n  padding-right: 0.75rem;\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n  border-width: 1px;\n  border-radius: 0.25rem;\n  color: #fff;\n  border-color: #fff;\n}\n.navbar-open-icon:hover {\n  border-color: #ed8936;\n  color: #ed8936;\n}\n@media (min-width: 768px) {\n.navbar-link {\n    display: inline-block;\n}\n.navbar-link.navbar-link-margins {\n    margin-top: 0;\n}\n}\n@media (min-width: 768px) {\n.md\\:leading-28 {\n    line-height: 2.8;\n}\n}\n.navbar-menu-group {\n  position: relative;\n  display: block;\n}\n@media (min-width: 768px) {\n.navbar-menu-group {\n    display: inline-block;\n}\n}\n.navbar-dropdown-group {\n  margin-left: 0.25rem;\n  margin-top: 0.5rem;\n  padding-left: 0.5rem;\n  padding-right: 0.5rem;\n  padding-top: 0.25rem;\n  padding-bottom: 0.25rem;\n  border-left-width: 4px;\n  border-color: transparent;\n  width: 100%;\n  overflow-y: visible;\n  line-height: 2;\n}\n.navbar-dropdown-item {\n  text-decoration: none;\n  margin-right: 1rem;\n  letter-spacing: 0.025em;\n  border-left-width: 4px;\n  border-color: transparent;\n  padding-left: 0.5rem;\n  cursor: pointer;\n  color: #e6fffa;\n}\n.navbar-dropdown-item:hover {\n  color: #4a5568;\n  border-color: #4a5568;\n}\n@media (min-width: 768px) {\n.navbar-dropdown-group {\n    position: absolute;\n    width: 10rem;\n    border-radius: 0.25rem;\n    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n    background-color: #edf2f7;\n}\n.navbar-dropdown-item {\n    margin-right: 0;\n    color: #000;\n}\n.navbar-dropdown-item:hover {\n    color: #4a5568;\n    border-color: #4a5568;\n}\n}\n.svg-list-icon {\n  height: 0.5rem;\n  margin-right: 0.2rem;\n  display: inline-block;\n}\n@media (min-width: 768px) {\n.svg-list-icon {\n    display: none;\n}\n}\n.z-index-top {\n  z-index: 100;\n}\n.dropdown-transition-enter-active {\n  -webkit-transition: opacity 0.5s;\n  transition: opacity 0.5s;\n}\n.dropdown-transition-leave-active {\n  -webkit-transition: opacity 0.2s;\n  transition: opacity 0.2s;\n}\n.dropdown-transition-enter, .dropdown-transition-leave-to {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, "/* Navbar */\n.navbar-balance {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n  flex-wrap: wrap;\n  padding-top: 1.25rem;\n  padding-bottom: 1.25rem;\n  padding-left: 1rem;\n  padding-right: 1rem;\n  /*@apply bt-teal-500;*/\n  background-image: -webkit-gradient(linear, left top, right bottom, from(#ed8936), to(#fbd38d));\n  background-image: linear-gradient(to bottom right, #ed8936, #fbd38d);\n}\n.navbar-link {\n  text-decoration: none;\n  display: block;\n  margin-right: 1rem;\n  line-height: 1;\n  letter-spacing: 0.025em;\n  border-left-width: 4px;\n  border-color: transparent;\n  padding-left: 0.5rem;\n  cursor: pointer;\n  color: #e6fffa;\n}\n.navbar-link:hover {\n  color: #4a5568;\n  border-color: #4a5568;\n}\n.navbar-link.navbar-link-margins {\n  margin-top: 1rem;\n}\n.navbar-open-icon {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  padding-left: 0.75rem;\n  padding-right: 0.75rem;\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n  border-width: 1px;\n  border-radius: 0.25rem;\n  color: #fff;\n  border-color: #fff;\n}\n.navbar-open-icon:hover {\n  border-color: #ed8936;\n  color: #ed8936;\n}\n@media (min-width: 768px) {\n.navbar-link {\n    display: inline-block;\n}\n.navbar-link.navbar-link-margins {\n    margin-top: 0;\n}\n}\n@media (min-width: 768px) {\n.md\\:leading-28 {\n    line-height: 2.8;\n}\n}\n.navbar-menu-group {\n  position: relative;\n  display: block;\n}\n@media (min-width: 768px) {\n.navbar-menu-group {\n    display: inline-block;\n}\n}\n.navbar-dropdown-group {\n  margin-left: 0.25rem;\n  margin-top: 0.5rem;\n  padding-left: 0.5rem;\n  padding-right: 0.5rem;\n  padding-top: 0.25rem;\n  padding-bottom: 0.25rem;\n  border-left-width: 4px;\n  border-color: transparent;\n  width: 100%;\n  overflow-y: visible;\n  line-height: 2;\n}\n.navbar-dropdown-item {\n  text-decoration: none;\n  margin-right: 1rem;\n  letter-spacing: 0.025em;\n  border-left-width: 4px;\n  border-color: transparent;\n  padding-left: 0.5rem;\n  cursor: pointer;\n  color: #e6fffa;\n}\n.navbar-dropdown-item:hover {\n  color: #4a5568;\n  border-color: #4a5568;\n}\n@media (min-width: 768px) {\n.navbar-dropdown-group {\n    position: absolute;\n    width: 10rem;\n    border-radius: 0.25rem;\n    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n    background-color: #edf2f7;\n}\n.navbar-dropdown-item {\n    margin-right: 0;\n    color: #000;\n}\n.navbar-dropdown-item:hover {\n    color: #4a5568;\n    border-color: #4a5568;\n}\n}\n.svg-list-icon {\n  height: 0.5rem;\n  margin-right: 0.2rem;\n  display: inline-block;\n}\n@media (min-width: 768px) {\n.svg-list-icon {\n    display: none;\n}\n}\n.z-index-top {\n  z-index: 100;\n}\n.dropdown-transition-enter-active {\n  -webkit-transition: opacity 0.5s;\n  transition: opacity 0.5s;\n}\n.dropdown-transition-leave-active {\n  -webkit-transition: opacity 0.2s;\n  transition: opacity 0.2s;\n}\n.dropdown-transition-enter, .dropdown-transition-leave-to {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -19237,7 +19238,13 @@ var render = function() {
                 _c(
                   "span",
                   { staticClass: "font-semibold text-xl tracking-normal" },
-                  [_vm._v(_vm._s(_vm.pageName))]
+                  [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t\t\t" +
+                        _vm._s(_vm.pageName) +
+                        "\n\t\t\t\t\t\t\t"
+                    )
+                  ]
                 )
               ])
             ],
@@ -19320,9 +19327,9 @@ var render = function() {
                             ),
                             [
                               _vm._v(
-                                "\n                    " +
+                                "\n                        " +
                                   _vm._s(menu.title) +
-                                  "\n                "
+                                  "\n                    "
                               )
                             ]
                           )
@@ -19346,9 +19353,9 @@ var render = function() {
                             ),
                             [
                               _vm._v(
-                                "\n                    " +
+                                "\n                        " +
                                   _vm._s(menu.title) +
-                                  "\n                "
+                                  "\n                    "
                               )
                             ]
                           ),
@@ -19443,9 +19450,9 @@ var render = function() {
                                             ]
                                           ),
                                           _vm._v(
-                                            "\n                                " +
+                                            "\n                                    " +
                                               _vm._s(submenu.title) +
-                                              "\n                            "
+                                              "\n                                "
                                           )
                                         ]
                                       )
@@ -19501,9 +19508,9 @@ var render = function() {
                             ),
                             [
                               _vm._v(
-                                "\n                    " +
+                                "\n                        " +
                                   _vm._s(menu.title) +
-                                  "\n                "
+                                  "\n                    "
                               )
                             ]
                           )
@@ -19527,9 +19534,9 @@ var render = function() {
                             ),
                             [
                               _vm._v(
-                                "\n                    " +
+                                "\n                        " +
                                   _vm._s(menu.title) +
-                                  "\n                "
+                                  "\n                    "
                               )
                             ]
                           ),
@@ -19621,9 +19628,9 @@ var render = function() {
                                             ]
                                           ),
                                           _vm._v(
-                                            "\n                                " +
+                                            "\n                                    " +
                                               _vm._s(submenu.title) +
-                                              "\n                            "
+                                              "\n                                "
                                           )
                                         ]
                                       )

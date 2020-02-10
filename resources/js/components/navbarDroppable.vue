@@ -5,13 +5,14 @@
     >
         <!-- Page Title -->
         <div class="flex items-center flex-shrink-0 text-white mr-1">
-            <a :href="pageHome" class="navbar-link"
-                ><slot
-                    ><span class="font-semibold text-xl tracking-normal">{{
-                        pageName
-                    }}</span></slot
-                ></a
-            >
+					<a :href="pageHome" class="navbar-link" >
+						<slot>
+						<!--<img src="/css/icons/nibble_francesinhas.jpg">-->
+							<span class="font-semibold text-xl tracking-normal">
+										{{pageName}}
+							</span>
+						</slot>
+					</a>
         </div>
         <!-- Mobile Show Menu Button -->
         <div class="block md:hidden">

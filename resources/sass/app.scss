@@ -277,6 +277,11 @@ body.dark-theme .form-input {
 }
 */
 
+.center-card-container {
+	@apply flex justify-center;
+	max-width: 650px;
+}
+
 .form-center-card {
     @apply shadow-xl border border-gray-400 rounded-lg px-8 pt-6 pb-8 mb-4 w-full mx-2;
 }

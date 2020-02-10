@@ -24,8 +24,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 113 + 113) / 227)
-exe 'vert 2resize ' . ((&columns * 113 + 113) / 227)
+exe 'vert 1resize ' . ((&columns * 135 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 135 + 135) / 271)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -36,15 +36,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 52 - ((18 * winheight(0) + 21) / 43)
+let s:l = 50 - ((49 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-52
-normal! 053|
+50
+normal! 0
+lcd /srv/http/little-french-ratings
 wincmd w
 argglobal
-if bufexists("/srv/http/balance-manager/resources/views/balance/create.blade.php") | buffer /srv/http/balance-manager/resources/views/balance/create.blade.php | else | edit /srv/http/balance-manager/resources/views/balance/create.blade.php | endif
+if bufexists("/srv/http/little-french-ratings/resources/views/auth/passwords/confirm.blade.php") | buffer /srv/http/little-french-ratings/resources/views/auth/passwords/confirm.blade.php | else | edit /srv/http/little-french-ratings/resources/views/auth/passwords/confirm.blade.php | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -54,28 +55,35 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 60 - ((14 * winheight(0) + 21) / 43)
+let s:l = 39 - ((38 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-60
-normal! 018|
+39
+normal! 012|
+lcd /srv/http/little-french-ratings
 wincmd w
-exe 'vert 1resize ' . ((&columns * 113 + 113) / 227)
-exe 'vert 2resize ' . ((&columns * 113 + 113) / 227)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 135 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 135 + 135) / 271)
 tabnext 1
-badd +78 app/User.php
-badd +49 resources/views/layouts/app.blade.php
-badd +206 resources/sass/app.scss
-badd +29 resources/sass/_variables.scss
-badd +19 app/Models/Role.php
-badd +39 routes/web.php
-badd +1 resources/js/components/plugins
-badd +12 resources/views/user/index.blade.php
-badd +54 app/Http/Controllers/UserController.php
-badd +71 resources/views/auth/login.blade.php
-badd +65 resources/views/user/change_password.blade.php
-badd +0 /srv/http/balance-manager/resources/views/balance/create.blade.php
+badd +18 /srv/http/little-french-ratings/resources/views/auth/login.blade.php
+badd +1 /srv/http/little-french-ratings/app/User.php
+badd +1 /srv/http/little-french-ratings/resources/views/layouts/app.blade.php
+badd +1 /srv/http/little-french-ratings/resources/sass/app.scss
+badd +1 /srv/http/little-french-ratings/resources/sass/_variables.scss
+badd +1 /srv/http/little-french-ratings/app/Models/Role.php
+badd +1 /srv/http/little-french-ratings/routes/web.php
+badd +1 /srv/http/little-french-ratings/resources/js/components/plugins
+badd +12 /srv/http/little-french-ratings/resources/views/user/index.blade.php
+badd +59 /srv/http/little-french-ratings/app/Http/Controllers/UserController.php
+badd +65 /srv/http/little-french-ratings/resources/views/user/change_password.blade.php
+badd +5 /srv/http/little-french-ratings/resources/views/auth/verify.blade.php
+badd +51 /srv/http/little-french-ratings/resources/views/auth/passwords/reset.blade.php
+badd +1 /srv/http/little-french-ratings/resources/views/auth/passwords
+badd +45 /srv/http/little-french-ratings/resources/views/user/register.blade.php
+badd +22 /srv/http/little-french-ratings/resources/views/auth/passwords/email.blade.php
+badd +0 /srv/http/little-french-ratings/resources/views/auth/passwords/confirm.blade.php
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -87,6 +95,7 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

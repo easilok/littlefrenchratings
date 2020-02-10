@@ -56,7 +56,7 @@ class UserController extends Controller
 
       $this->sendResetLinkEmail($request);
 
-		  return redirect("/");
+		  return redirect("/users");
 
     }
 
