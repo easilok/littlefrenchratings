@@ -21,6 +21,18 @@ Route::get('/', function () {
 Route::group (['middleware' => 'auth'], function() {
 	Route::get('/home', 'HomeController@index')->name('home');
 
+	Route::get('/establishment', 'EstablishmentController@index');
+
+	Route::get('/establishment/create', 'EstablishmentController@create');
+
+	Route::get('/establishment/{id}', 'EstablishmentController@show');
+
+	Route::get('/establishment/{id}/edit', 'EstablishmentController@edit');
+
+	Route::post('/establishment', 'EstablishmentController@store');
+
+	Route::patch('/establishment/{id}', 'EstablishmentController@update');
+
 	Route::get('user/register', 'UserController@create');
 
 	Route::post('user/register', 'UserController@store');
