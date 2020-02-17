@@ -119,7 +119,7 @@
 						Email:
           </label>
           <input id="email" type="email" class="form-input" 
-            name="email" value="{{ old('email') }}" placeholder="Email" required
+            name="email" value="{{ old('email') }}" placeholder="Email"
             >
           @if ($errors->has('email'))
           <span class="input-validation-error" role="alert">

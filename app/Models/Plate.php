@@ -37,4 +37,13 @@ class Plate extends Model
 		return $this->hasMany('App\Models\Image');
 	}
 
+	public function averageRating() {
+		/* Only Uses ratings that has numeric rating */
+		$numericRatings = Rating::where('type', '<', 2)->pluck('id');
+		$avg = $this->ratings->whereIn('rating_id', $numericRatings)->average('rating_value');
+		unset($this->ratings);
+
+		return $avg;
+	}
+
 }

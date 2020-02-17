@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 use App\User;
+use App\Models\Configurations;
 use App\Models\Role;
 use App\Models\RoleUser;
 
@@ -53,6 +54,8 @@ class UserController extends Controller
       ]);
 
 			$user->role()->attach($request->input('role'));
+
+			$user->ResetConfigurations();
 
       $this->sendResetLinkEmail($request);
 

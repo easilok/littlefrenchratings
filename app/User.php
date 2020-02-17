@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Configuration;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -63,6 +64,18 @@ class User extends Authenticatable
 			}
 
 			return $result;
+
+		}
+
+		public function ResetConfigurations() {
+
+			$this->configurations()->detach();
+
+			$configurations = Configuration::all();
+
+			foreach($configurations as $configuration) {
+				$this->configurations()->attach($configuration->id, ['value' => $configuration->default]);
+			}
 
 		}
 

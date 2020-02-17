@@ -4,14 +4,14 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd /var/www/html/littlefrenchratings
+cd /srv/http/little-french-ratings
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-edit resources/views/establishment/create.blade.php
+edit resources/views/establishment/index.blade.php
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -24,8 +24,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 72 + 72) / 144)
-exe 'vert 2resize ' . ((&columns * 71 + 72) / 144)
+exe 'vert 1resize ' . ((&columns * 136 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 134 + 135) / 271)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -36,15 +36,20 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 134 - ((6 * winheight(0) + 17) / 35)
+let s:l = 49 - ((48 * winheight(0) + 34) / 69)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-134
-normal! 015|
+49
+let s:c = 137 - ((64 * winwidth(0) + 68) / 136)
+if s:c > 0
+  exe 'normal! ' . s:c . '|zs' . 137 . '|'
+else
+  normal! 0137|
+endif
 wincmd w
 argglobal
-if bufexists("resources/views/auth/login.blade.php") | buffer resources/views/auth/login.blade.php | else | edit resources/views/auth/login.blade.php | endif
+if bufexists("resources/sass/navbarDroppable.scss") | buffer resources/sass/navbarDroppable.scss | else | edit resources/sass/navbarDroppable.scss | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -54,19 +59,26 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 35 - ((1 * winheight(0) + 17) / 35)
+let s:l = 84 - ((52 * winheight(0) + 34) / 69)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 019|
+84
+normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 72 + 72) / 144)
-exe 'vert 2resize ' . ((&columns * 71 + 72) / 144)
+exe 'vert 1resize ' . ((&columns * 136 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 134 + 135) / 271)
 tabnext 1
-badd +168 resources/views/establishment/create.blade.php
-badd +206 resources/sass/app.scss
-badd +0 resources/views/auth/login.blade.php
+badd +46 app/Models/Establishment.php
+badd +41 app/Models/Plate.php
+badd +1 resources/views/establishment/create.blade.php
+badd +1 resources/views/establishment/index.blade.php
+badd +1 resources/views/auth/login.blade.php
+badd +1 resources/sass/app.scss
+badd +23 app/Http/Controllers/EstablishmentController.php
+badd +1 app/Http/Controllers/UserController.php
+badd +49 /srv/http/balance-manager/app/Models/Category.php
+badd +0 resources/sass/navbarDroppable.scss
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

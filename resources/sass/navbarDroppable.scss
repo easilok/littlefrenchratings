@@ -2,7 +2,7 @@
 @import 'variables';
 
 .navbar-balance {
-	@apply flex items-center justify-between flex-wrap py-5 px-4;
+	@apply flex items-center justify-between flex-wrap py-5 px-4 shadow-xl;
 	/*@apply bt-teal-500;*/
 	background-image: linear-gradient(
 		to bottom right,
