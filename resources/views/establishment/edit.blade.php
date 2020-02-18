@@ -4,19 +4,20 @@
 <div class="container mx-auto ">
   <div class="form-center-card mt-5">
 		<div class="remove-padding-x border-b border-gray-400 mb-5">
-	    <div class="mb-6 text-xl text-platform-color font-bold">Criar Novo Estabelecimento</div>
+	    <div class="mb-6 text-xl text-platform-color font-bold">Editar <span class="italic">"{{$establishment->name}}"<span></div>
 		</div>
 
     <div class="w-full flex justify-center justify-center">
-      <form method="POST" class="w-full justify-center" action="{{ url('/establishment') }}">
+      <form method="POST" class="w-full justify-center" action="{{ url('/establishment/'.$establishment->id) }}">
         @csrf
+				@method("PATCH")
         <!-- Name -->
         <div class="mb-4">
           <label for="name" class="form-label" for="name">
 						Nome:
           </label>
           <input id="name" type="text" class="form-input" 
-            name="name" value="{{ old('name') }}" placeholder="Nome" 
+            name="name" value="{{ old('name') ? old('name') : $establishment->name }}" placeholder="Nome" 
             required autofocus>
           @if ($errors->has('name'))
           <span class="input-validation-error" role="alert">
@@ -30,7 +31,7 @@
 						Morada:
           </label>
           <input id="address" type="text" class="form-input" 
-            name="address" value="{{ old('address') }}" placeholder="Morada:">
+            name="address" value="{{ old('address') ? old('address') : $establishment->address }}" placeholder="Morada:">
           @if ($errors->has('address'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('address') }}</strong>
@@ -43,7 +44,7 @@
 						Localidade:
           </label>
           <input id="parish" type="text" class="form-input" 
-            name="parish" value="{{ old('parish') }}" placeholder="Localidade:">
+            name="parish" value="{{ old('parish') ? old('parish') : $establishment->parish }}" placeholder="Localidade:">
           @if ($errors->has('parish'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('parish') }}</strong>
@@ -56,7 +57,7 @@
 						Cidade:
           </label>
           <input id="city" type="text" class="form-input" 
-            name="city" value="{{ old('city') }}" placeholder="Cidade:">
+            name="city" value="{{ old('city') ? old('city') : $establishment->city }}" placeholder="Cidade:">
           @if ($errors->has('city'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('city') }}</strong>
@@ -69,7 +70,7 @@
 						Coordenas GPS:
           </label>
           <input id="gps" type="text" class="form-input" 
-            name="gps" value="{{ old('gps') }}" placeholder="41.8213º, 8.2134º">
+            name="gps" value="{{ old('gps') ? old('gps') : $establishment->gps }}" placeholder="41.8213º, 8.2134º">
           @if ($errors->has('gps'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('gps') }}</strong>
@@ -82,7 +83,7 @@
 						Telefone (1):
           </label>
           <input id="telephone1" type="text" class="form-input" 
-            name="telephone1" value="{{ old('telephone1') }}" placeholder="+351227778090">
+            name="telephone1" value="{{ old('telephone1') ? old('telephone1') : $establishment->telephone1 }}" placeholder="+351227778090">
           @if ($errors->has('telephone1'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('telephone1') }}</strong>
@@ -95,7 +96,7 @@
 						Telefone (2):
           </label>
           <input id="telephone2" type="text" class="form-input" 
-            name="telephone2" value="{{ old('telephone2') }}" placeholder="+351227778090">
+            name="telephone2" value="{{ old('telephone2') ? old('telephone2') : $establishment->telephone2 }}" placeholder="+351227778090">
           @if ($errors->has('telephone2'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('telephone2') }}</strong>
@@ -108,7 +109,7 @@
 						Telefone (3):
           </label>
           <input id="telephone3" type="text" class="form-input" 
-            name="telephone3" value="{{ old('telephone3') }}" placeholder="+351227778090">
+            name="telephone3" value="{{ old('telephone3') ? old('telephone3') : $establishment->telephone3 }}" placeholder="+351227778090">
           @if ($errors->has('telephone3'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('telephone3') }}</strong>
@@ -121,7 +122,7 @@
 						Email:
           </label>
           <input id="email" type="email" class="form-input" 
-            name="email" value="{{ old('email') }}" placeholder="Email"
+            name="email" value="{{ old('email') ? old('email') : $establishment->email }}" placeholder="Email"
             >
           @if ($errors->has('email'))
           <span class="input-validation-error" role="alert">
@@ -131,12 +132,12 @@
         </div>
         <!-- Card -->
         <div class="my-8">
-          <label for="telephone3" class="form-checkbox-label" for="telephone3">
+          <label for="card" class="form-checkbox-label" for="card">
 						<span class="mr-4">
 							Multibanco
 						</span>
 						<input id="card" type="checkbox" class="form-checkbox" 
-            name="card" {{ old('card') ? 'checked' : '' }}>
+            name="card" {{ $establishment->card ? 'checked' : '' }}>
           </label>
 				</div>
         <!-- Timetable -->
@@ -145,7 +146,7 @@
 						Horário:
           </label>
           <input id="timetable" type="text" class="form-input" 
-            name="timetable" value="{{ old('timetable') }}" placeholder="Seg-Sex: 10:00 - 17:00">
+            name="timetable" value="{{ old('timetable') ? old('timetable') : $establishment->timetable }}" placeholder="Seg-Sex: 10:00 - 17:00">
           @if ($errors->has('timetable'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('timetable') }}</strong>
@@ -158,7 +159,7 @@
 						Outras informações:
           </label>
           <input id="obs" type="text" class="form-input" 
-            name="obs" value="{{ old('obs') }}" placeholder="Possui Wifi, etc.">
+            name="obs" value="{{ old('obs') ? old('obs') : $establishment->obs }}" placeholder="Possui Wifi, etc.">
           @if ($errors->has('obs'))
           <span class="input-validation-error" role="alert">
             <strong>{{ $errors->first('obs') }}</strong>
@@ -168,7 +169,7 @@
 				<!-- Create Button -->
 				<div class="flex justify-end">
 					<button type="submit" class="btn-std btn-platform">
-						Criar
+						Atualizar
 					</button>
 				</div>
       </form>

@@ -11825,6 +11825,13 @@ body.dark-theme .form-input {
   margin-right: 0.5rem;
 }
 
+.form-center-card > .remove-padding-x {
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 @media (min-width: 768px) {
   .form-center-card {
     margin-left: 0;

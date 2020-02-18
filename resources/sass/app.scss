@@ -284,6 +284,10 @@ body.dark-theme .form-input {
 
 .form-center-card {
     @apply shadow-xl border border-gray-400 rounded-lg px-8 pt-6 pb-8 mb-4 w-full mx-2;
+
+		> .remove-padding-x {
+			@apply -mx-8 px-8;
+		}
 }
 
 @screen md {

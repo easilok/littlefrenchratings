@@ -49,9 +49,9 @@ class EstablishmentController extends Controller
 
 		/* Todo: create custom validation for telephone */
 		$request->validate([
-			'name' => 'required|max:255',
+			'name' => 'required|min:1|max:255',
 			'address' => 'max:255',
-			'parish' => 'required|max:255',
+			'parish' => 'required|min:1|max:255',
 			'city' => 'max:255',
 			'gps' => 'max:255',
 			'telephone1' => 'max:255',
@@ -81,4 +81,57 @@ class EstablishmentController extends Controller
 		return redirect('/establishment');
 
 	}
+
+	public function edit (Establishment $establishment) {
+		if (Gate::denies('edit')) {
+			abort(403);
+		}
+
+		return view('establishment.edit', compact('establishment'));
+	}
+
+	public function update (Establishment $establishment, Request $request) {
+		if (Gate::denies('edit')) {
+			abort(403);
+		}
+
+		/* Todo: create custom validation for telephone */
+		$request->validate([
+			'name' => 'required|min:1|max:255',
+			'address' => 'max:255',
+			'parish' => 'required|min:1|max:255',
+			'city' => 'max:255',
+			'gps' => 'max:255',
+			'telephone1' => 'max:255',
+			'telephone2' => 'max:255',
+			'telephone3' => 'max:255',
+			'email' => strlen($request->input('email')) > 0 ? 'email' : '',
+			'timetable' => 'max:255',
+			'obs' => 'max:255'
+		]);
+
+		try
+		{
+			$establishment->name = $request->input('name');
+			$establishment->address = $request->input('address');
+			$establishment->parish = $request->input('parish');
+			$establishment->city = $request->input('city');
+			$establishment->gps = $request->input('gps');
+			$establishment->telephone1 = $request->input('telephone1');
+			$establishment->telephone2 = $request->input('telephone2');
+			$establishment->telephone3 = $request->input('telephone3');
+			$establishment->email = $request->input('email');
+			$establishment->timetable = $request->input('timetable');
+			$establishment->obs = $request->input('obs');
+
+			$establishment->save();
+
+		} catch (Exception $e) {
+			abort(403);
+		}
+
+		return redirect("/establishment/$establishment->id");
+
+	}
+
 }

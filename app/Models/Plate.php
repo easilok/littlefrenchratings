@@ -40,10 +40,11 @@ class Plate extends Model
 	public function averageRating() {
 		/* Only Uses ratings that has numeric rating */
 		$numericRatings = Rating::where('type', '<', 2)->pluck('id');
-		$avg = $this->ratings->whereIn('rating_id', $numericRatings)->average('rating_value');
+		$this->ratingCount = $this->ratings->whereIn('rating_id', $numericRatings)->where('rating_value', '>', 0)->count('rating_value');
+		$this->ratingAvg = $this->ratings->whereIn('rating_id', $numericRatings)->where('rating_value', '>', 0)->average('rating_value');
 		unset($this->ratings);
 
-		return $avg;
+		return $this->ratingAvg;
 	}
 
 }

@@ -25,13 +25,25 @@ Route::group (['middleware' => 'auth'], function() {
 
 	Route::get('/establishment/create', 'EstablishmentController@create');
 
-	Route::get('/establishment/{id}', 'EstablishmentController@show');
+	Route::get('/establishment/{establishment}', 'EstablishmentController@show');
 
-	Route::get('/establishment/{id}/edit', 'EstablishmentController@edit');
+	Route::get('/establishment/{establishment}/edit', 'EstablishmentController@edit');
 
 	Route::post('/establishment', 'EstablishmentController@store');
 
-	Route::patch('/establishment/{id}', 'EstablishmentController@update');
+	Route::patch('/establishment/{establishment}', 'EstablishmentController@update');
+
+	Route::get('/plate', 'PlateController@index');
+
+	Route::get('/plate/create', 'PlateController@create');
+
+	Route::get('/plate/{plate}', 'PlateController@show');
+
+	Route::get('/plate/{plate}/edit', 'PlateController@edit');
+
+	Route::post('/plate', 'PlateController@store');
+
+	Route::patch('/plate/{plate}', 'PlateController@update');
 
 	Route::get('user/register', 'UserController@create');
 
@@ -43,9 +55,9 @@ Route::group (['middleware' => 'auth'], function() {
 
 	Route::get('/users', 'UserController@index');
 
-	Route::get('/users/{id}/edit', 'UserController@edit');
+	Route::get('/users/{user}/edit', 'UserController@edit');
 
-	Route::patch('/users/{id}', 'UserController@update');
+	Route::patch('/users/{user}', 'UserController@update');
 
 	Route::get('logout', function() {
 		Auth::logout();
