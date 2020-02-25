@@ -77,6 +77,28 @@
           </span>
           @endif
 				</div>
+				<!-- Location Source -->
+        <div class="mb-4">
+					<label for="source" class="form-label">
+						Dados para uso na localização:
+					</label>
+					<div class="relative">
+						<select id="source" name="source" class="form-select">
+						@foreach($sources as $source)
+								<option value="{{$source->id}}" 
+									{{
+										$establishment->locationsource_id ?
+										($establishment->locationsource_id == $source->id ? 'selected': '') 
+										: ($loop->first ? 'selected' : '')
+									}} 
+								>{{$source->name}}</option>
+						@endforeach
+						</select>
+						<div class="form-select-arrow">
+							<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+						</div>
+					</div>
+        </div>
         <!-- Telephone1 -->
         <div class="mb-4">
           <label for="telephone1" class="form-label" for="telefone1">

@@ -63,7 +63,7 @@
 }
 
 .navbar-dropdown-item {
-	@apply no-underline mr-4 tracking-wide border-l-4 border-transparent pl-2 cursor-pointer;
+	@apply no-underline mr-4 tracking-wide border-l-4 border-transparent px-2 cursor-pointer whitespace-no-wrap;
 	color: $platformNavTextColor;
 	&:hover {
 		color: $platformNavHoverColor;
@@ -73,7 +73,7 @@
 
 @screen md {
 	.navbar-dropdown-group {
-		@apply absolute w-40 rounded shadow-md;
+		@apply absolute w-auto rounded shadow-md;
 		background-color: $platformNavDropdownBg;
 	}
 

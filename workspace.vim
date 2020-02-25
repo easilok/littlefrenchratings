@@ -11,7 +11,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit resources/views/establishment/index.blade.php
+edit resources/views/plate/show.blade.php
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -24,8 +24,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 136 + 135) / 271)
-exe 'vert 2resize ' . ((&columns * 134 + 135) / 271)
+exe 'vert 1resize ' . ((&columns * 113 + 113) / 227)
+exe 'vert 2resize ' . ((&columns * 113 + 113) / 227)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -36,20 +36,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 49 - ((48 * winheight(0) + 34) / 69)
+let s:l = 19 - ((6 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49
-let s:c = 137 - ((64 * winwidth(0) + 68) / 136)
-if s:c > 0
-  exe 'normal! ' . s:c . '|zs' . 137 . '|'
-else
-  normal! 0137|
-endif
+19
+normal! 061|
+lcd /srv/http/little-french-ratings
 wincmd w
 argglobal
-if bufexists("resources/sass/navbarDroppable.scss") | buffer resources/sass/navbarDroppable.scss | else | edit resources/sass/navbarDroppable.scss | endif
+if bufexists("/srv/http/little-french-ratings/resources/views/establishment/show.blade.php") | buffer /srv/http/little-french-ratings/resources/views/establishment/show.blade.php | else | edit /srv/http/little-french-ratings/resources/views/establishment/show.blade.php | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -59,31 +55,32 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 84 - ((52 * winheight(0) + 34) / 69)
+let s:l = 62 - ((41 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-84
-normal! 0
+62
+normal! 022|
+lcd /srv/http/little-french-ratings
 wincmd w
-exe 'vert 1resize ' . ((&columns * 136 + 135) / 271)
-exe 'vert 2resize ' . ((&columns * 134 + 135) / 271)
+exe 'vert 1resize ' . ((&columns * 113 + 113) / 227)
+exe 'vert 2resize ' . ((&columns * 113 + 113) / 227)
 tabnext 1
-badd +46 app/Models/Establishment.php
-badd +41 app/Models/Plate.php
-badd +1 resources/views/establishment/create.blade.php
-badd +1 resources/views/establishment/index.blade.php
-badd +1 resources/views/auth/login.blade.php
-badd +1 resources/sass/app.scss
-badd +23 app/Http/Controllers/EstablishmentController.php
-badd +1 app/Http/Controllers/UserController.php
-badd +49 /srv/http/balance-manager/app/Models/Category.php
-badd +0 resources/sass/navbarDroppable.scss
+badd +74 /srv/http/balance-manager/resources/views/home.blade.php
+badd +87 /srv/http/little-french-ratings/resources/views/plate/show.blade.php
+badd +7 /srv/http/little-french-ratings/app/Models/Establishment.php
+badd +6 /srv/http/little-french-ratings/app/Models/Plate.php
+badd +82 /srv/http/little-french-ratings/app/Http/Controllers/EstablishmentController.php
+badd +24 /srv/http/little-french-ratings/resources/views/plate/index.blade.php
+badd +53 /srv/http/little-french-ratings/app/Http/Controllers/PlateController.php
+badd +1 /srv/http/little-french-ratings/app/Models
+badd +3 /srv/http/ginger-store/resources/views/product/product.blade.php
+badd +1 /srv/http/little-french-ratings/resources/views/establishment/show.blade.php
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToOSIc
+set winheight=1 winwidth=20 shortmess=filnxtToOS
 set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)

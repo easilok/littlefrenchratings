@@ -38,7 +38,7 @@
         </div>
 				<!-- User Role -->
         <div class="mb-4">
-					<label for="role" class="form-label" for="role">
+					<label for="role" class="form-label">
 						Grupo de Permissões
 					</label>
 					<div class="relative">

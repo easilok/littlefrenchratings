@@ -43,11 +43,11 @@
 			</div>
 			@if ($establishment->gps)
 			<div class="w-full mb-3 sm:mb-0 sm:w-1/3">
-				<a href="geo:{{$establishment->gps}}" target="_blank" class="hover:underline md:hidden">
-					<img class="inline-block mr-2" style="height: 20px;" src="/svg/icons/map.svg" alt="GPS"><span>{{$establishment->gps}}</span>
-				</a>
-				<a href="https://www.google.com/maps/search/?api=1&query={{$establishment->gps}}" target="_blank" class="hover:underline hidden md:block">
-					<img class="inline-block mr-2" style="height: 20px;" src="/svg/icons/map.svg" alt="GPS"><span>{{$establishment->gps}}</span>
+				<!--<a href="geo:{{$establishment->gps}}" target="_blank" class="hover:underline md:hidden">
+					<img class="inline-block mr-2" style="height: 20px;" src="/svg/icons/map.svg" alt="GPS"><span>Navegar</span>
+				</a>-->
+				<a href="https://www.google.com/maps/search/?api=1&query={{$establishment->location}}" target="_blank" class="hover:underline block hhidden md:block">
+					<img class="inline-block mr-2" style="height: 20px;" src="/svg/icons/map.svg" alt="GPS"><span>Navegar</span>
 				</a>
 			</div>
 			@endif

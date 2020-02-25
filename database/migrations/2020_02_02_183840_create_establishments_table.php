@@ -28,8 +28,10 @@ class CreateEstablishmentsTable extends Migration
 						$table->string('timetable')->nullable();
 						$table->string('obs')->nullable()->default('');
 						$table->unsignedBigInteger('user_id')->nullable();
+						$table->unsignedBigInteger('locationsource_id')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('locationsource_id')->references('id')->on('location_sources')->onDelete('set null');
         });
     }
 

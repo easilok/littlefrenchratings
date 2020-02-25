@@ -14,9 +14,15 @@ class Taste extends Model
 	protected $casts = [
 		'plate_id' => 'integer',
 		'user_id' => 'integer',
-		'date' => 'datetime',
+		'visit_at' => 'datetime',
 		'price' => 'float'
 	];
+
+	/* protected $dates = [ */
+	/* 	'visit_at', 'created_at' */
+	/* ]; */
+
+	/* protected $dateFormat = 'U'; */
 
 	public function user() {
 		return $this->belongsTo('App\User');

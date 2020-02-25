@@ -1,9 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/icons/francesinha_animated.png": "/css/icons/francesinha_animated.png",
     "/css/icons/nibble_francesinhas.jpg": "/css/icons/nibble_francesinhas.jpg",
     "/svg/icons/mail.svg": "/svg/icons/mail.svg",
     "/svg/icons/map.svg": "/svg/icons/map.svg",
     "/svg/icons/paper-plane.svg": "/svg/icons/paper-plane.svg",
+    "/svg/icons/plus.svg": "/svg/icons/plus.svg",
     "/svg/icons/telephone.svg": "/svg/icons/telephone.svg"
 }

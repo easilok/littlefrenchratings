@@ -18,6 +18,7 @@ class CreateRatingsTable extends Migration
 						$table->string('name')->unique();
 						$table->string('description');
 						$table->unsignedInteger('type')->default(1);
+						$table->boolean('required')->default(true);
 						$table->boolean('enable');
             $table->timestamps();
 				});

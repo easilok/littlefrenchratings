@@ -15,6 +15,13 @@ class RatingsTableSeeder extends Seeder
         DB::table('ratings')->delete();
 
         Rating::create(array(
+          'name' => 'Geral',
+					'description' => 'Pequeno comentário sobre o que achou do prato e local',
+					'type' => 2, // text
+          'enable' => true,
+        ));
+
+        Rating::create(array(
           'name' => 'Molho',
 					'description' => 'Avaliar Sabor e consistência do molho',
 					'type' => 1, // Value + Text
@@ -28,11 +35,5 @@ class RatingsTableSeeder extends Seeder
           'enable' => true,
         ));
 
-        Rating::create(array(
-          'name' => 'Geral',
-					'description' => 'Pequeno comentário sobre o que achou do prato e local',
-					'type' => 2, // text
-          'enable' => true,
-        ));
     }
 }
