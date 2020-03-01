@@ -11,7 +11,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit app/Models/Plate.php
+edit app/Http/Controllers/PlateController.php
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -24,8 +24,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 113 + 113) / 227)
-exe 'vert 2resize ' . ((&columns * 113 + 113) / 227)
+exe 'vert 1resize ' . ((&columns * 72 + 72) / 144)
+exe 'vert 2resize ' . ((&columns * 71 + 72) / 144)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -36,15 +36,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 21) / 43)
+let s:l = 99 - ((5 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
+99
 normal! 0
 wincmd w
 argglobal
-if bufexists("database/migrations/2020_02_02_184600_create_plates_table.php") | buffer database/migrations/2020_02_02_184600_create_plates_table.php | else | edit database/migrations/2020_02_02_184600_create_plates_table.php | endif
+if bufexists("app/Models/Images.php") | buffer app/Models/Images.php | else | edit app/Models/Images.php | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -54,24 +54,29 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 20 - ((19 * winheight(0) + 21) / 43)
+let s:l = 38 - ((14 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 045|
+38
+normal! 05|
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 113 + 113) / 227)
-exe 'vert 2resize ' . ((&columns * 113 + 113) / 227)
+exe 'vert 1resize ' . ((&columns * 72 + 72) / 144)
+exe 'vert 2resize ' . ((&columns * 71 + 72) / 144)
 tabnext 1
-badd +56 resources/views/plate/create.blade.php
+badd +42 app/Models/Plate.php
+badd +73 resources/views/plate/create.blade.php
 badd +34 routes/web.php
-badd +212 app/Http/Controllers/EstablishmentController.php
+badd +6 app/Http/Controllers/EstablishmentController.php
 badd +191 resources/sass/app.scss
-badd +83 app/Models/Establishment.php
-badd +39 app/Models/Plate.php
-badd +0 database/migrations/2020_02_02_184600_create_plates_table.php
+badd +1 app/Models/Establishment.php
+badd +98 resources/views/plate/edit.blade.php
+badd +89 app/Http/Controllers/PlateController.php
+badd +26 resources/views/plate/index.blade.php
+badd +67 resources/views/plate/show.blade.php
+badd +94 resources/views/establishment/show.blade.php
+badd +0 app/Models/Images.php
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

@@ -27,4 +27,15 @@ class Images extends Model
 		return $this->belongsTo('App\Models\Plate');
 	}
 
+	public static function uncoverAll($plate_id) {
+
+		$images = Images::where('plate_id', $plate_id)->get();
+
+		foreach ($images as $image) {
+			$image->cover = false;
+			$image->save();
+		}
+		/* return (new static) $images; */
+	}
+
 }

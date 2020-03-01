@@ -18,6 +18,11 @@
 						<span class="text-2xl">{{$plate->name}}</span>
 						<span class="text-sm">- <a class="hover:underline" href="/establishment/{{$plate->establishment->id}}">{{$plate->establishment->name}}, {{$plate->establishment->parish}}</a></span>
 					</div>
+					@if ($plate->obs)
+					<div class="pl-4 pt-0 p-2 w-full italic">
+						{{$plate->obs}} 
+					</div>
+					@endif
 					<div class="p-2 w-full flex justify-between">
 						<div>
 							<span class="text-lg font-bold text-gray-800">{{$plate->ratingAvg > 0 ? $plate->ratingAvg : '-'}}</span><span class="text-sm">/5</span>
@@ -58,8 +63,8 @@
 		</div>
 		<div class="p-2 w-full md:w-2/5 border-t border-gray-400 md:border-0 flex">
 			<div class="w-full self-center">
-				@if ($plate->images->count() > 0)
-					<img src="/storage/uploads/{{$plate->images->first()->path}}" alt="{{$plate->name}}">
+				@if ($plate->cover->count() > 0)
+					<img src="/storage/uploads/{{$plate->cover->first()->path}}" alt="{{$plate->name}}">
 				@else
 					<img class="rounded" src="/css/icons/francesinha_animated.png" alt="{{$plate->name}}">
 				@endif
