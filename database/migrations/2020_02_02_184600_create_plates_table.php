@@ -17,7 +17,7 @@ class CreatePlatesTable extends Migration
             $table->bigIncrements('id');
 						$table->string('name');
 						$table->float('price', 6, 2)->default(0);
-						$table->string('obs');
+						$table->string('obs')->nullable();
 						$table->unsignedBigInteger('user_id')->nullable();
 						$table->unsignedBigInteger('establishment_id');
             $table->timestamps();

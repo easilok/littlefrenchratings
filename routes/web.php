@@ -29,6 +29,10 @@ Route::group (['middleware' => 'auth'], function() {
 
 	Route::get('/establishment/{establishment}/edit', 'EstablishmentController@edit');
 
+	Route::get('/establishment/{establishment}/plate/create', 'EstablishmentController@create_plate');
+
+	Route::post('/establishment/{establishment}/plate', 'EstablishmentController@store_plate');
+
 	Route::post('/establishment', 'EstablishmentController@store');
 
 	Route::patch('/establishment/{establishment}', 'EstablishmentController@update');

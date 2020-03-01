@@ -20,6 +20,8 @@ class Plate extends Model
 		'establishment_id' => 'integer'
 	];
 
+	protected $guarded = [];
+
 	public function user() {
 		return $this->belongsTo('App\User');
 	}

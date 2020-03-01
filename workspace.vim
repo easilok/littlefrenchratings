@@ -11,7 +11,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit resources/views/plate/show.blade.php
+edit app/Models/Plate.php
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -36,16 +36,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((6 * winheight(0) + 21) / 43)
+let s:l = 22 - ((21 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 061|
-lcd /srv/http/little-french-ratings
+22
+normal! 0
 wincmd w
 argglobal
-if bufexists("/srv/http/little-french-ratings/resources/views/establishment/show.blade.php") | buffer /srv/http/little-french-ratings/resources/views/establishment/show.blade.php | else | edit /srv/http/little-french-ratings/resources/views/establishment/show.blade.php | endif
+if bufexists("database/migrations/2020_02_02_184600_create_plates_table.php") | buffer database/migrations/2020_02_02_184600_create_plates_table.php | else | edit database/migrations/2020_02_02_184600_create_plates_table.php | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -55,32 +54,29 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 62 - ((41 * winheight(0) + 21) / 43)
+let s:l = 20 - ((19 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-62
-normal! 022|
-lcd /srv/http/little-french-ratings
+20
+normal! 045|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 113 + 113) / 227)
 exe 'vert 2resize ' . ((&columns * 113 + 113) / 227)
 tabnext 1
-badd +74 /srv/http/balance-manager/resources/views/home.blade.php
-badd +87 /srv/http/little-french-ratings/resources/views/plate/show.blade.php
-badd +7 /srv/http/little-french-ratings/app/Models/Establishment.php
-badd +6 /srv/http/little-french-ratings/app/Models/Plate.php
-badd +82 /srv/http/little-french-ratings/app/Http/Controllers/EstablishmentController.php
-badd +24 /srv/http/little-french-ratings/resources/views/plate/index.blade.php
-badd +53 /srv/http/little-french-ratings/app/Http/Controllers/PlateController.php
-badd +1 /srv/http/little-french-ratings/app/Models
-badd +3 /srv/http/ginger-store/resources/views/product/product.blade.php
-badd +1 /srv/http/little-french-ratings/resources/views/establishment/show.blade.php
+badd +56 resources/views/plate/create.blade.php
+badd +34 routes/web.php
+badd +212 app/Http/Controllers/EstablishmentController.php
+badd +191 resources/sass/app.scss
+badd +83 app/Models/Establishment.php
+badd +39 app/Models/Plate.php
+badd +0 database/migrations/2020_02_02_184600_create_plates_table.php
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToOS
+set winheight=1 winwidth=20 shortmess=filnxtToOSIc
 set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)

@@ -17,6 +17,8 @@ class Images extends Model
 		'user_id' => 'integer'
 	];
 
+	protected $guarded = [];
+
 	public function user() {
 		return $this->belongsTo('App\User');
 	}
