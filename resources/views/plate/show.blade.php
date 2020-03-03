@@ -74,7 +74,7 @@
 		</div>
 	</article>
 	<!-- Plate Photos -->
-	@if ($plate->images->count() > 0)
+	@if ($plate->images->count() > 1)
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full tracking-wider border-b border-gray-400">
 			<span class="text-2xl">Registo Fotográfico:</span>
@@ -88,7 +88,7 @@
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full">
 			<div class="w-full overflow-hidden">
-				<iframe height="320px" class="w-full" src="http://www.google.com/maps/embed/v1/place?
+				<iframe height="320px" class="w-full" src="https://www.google.com/maps/embed/v1/place?
 															q={{$plate->establishment->location}}
 															&key=AIzaSyC6F2I5PmR3YM9gx4xC39JnwN5GMJAfnq4
 															&zoom=18&maptype=satellite"  allowfullscreen

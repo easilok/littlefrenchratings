@@ -69,7 +69,7 @@
 								marginwidth="0"
 				>
 				</iframe>-->
-				<iframe height="320px" class="w-full" src="http://www.google.com/maps/embed/v1/place?
+				<iframe height="320px" class="w-full" src="https://www.google.com/maps/embed/v1/place?
 															q={{$establishment->location}}
 															&key=AIzaSyC6F2I5PmR3YM9gx4xC39JnwN5GMJAfnq4
 															&zoom=18&maptype=satellite"  allowfullscreen
