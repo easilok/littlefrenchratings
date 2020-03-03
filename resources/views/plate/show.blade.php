@@ -74,39 +74,16 @@
 		</div>
 	</article>
 	<!-- Plate Photos -->
+	@if ($plate->images->count() > 0)
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
-		<div class="p-6 w-full flex ">
+		<div class="px-4 py-4 w-full tracking-wider border-b border-gray-400">
+			<span class="text-2xl">Registo Fotográfico:</span>
+		</div>
+		<div class="p-6 w-full flex flex-wrap">
 			<image-slideshow :slides=@json($plate->images)></image-slideshow>
-{{--
-			<div class="mx-auto relative inline-block" x-data="{ activeSlide: 0, slides: {{$plate->images}} }">
-				<!-- slides -->
-				<template x-for="slide in slides" :key="slide.id">
-					<img
-						class="max-h-screen min-height-350"
-						x-show="slides[activeSlide].id === slide.id"
-						:src="'/storage/uploads/'+slide.path">
-				</template>
-				<!-- Prev/Next Arrows -->
-				<div class="absolute inset-0 flex">
-					<div class="flex items-center justify-start w-1/2">
-						<button
-							class="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
-							x-on:click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1">
-							&#8592;
-						</button>
-					</div>
-					<div class="flex items-center justify-end w-1/2">
-						<button
-							class="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -mr-6"
-							x-on:click="activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1">
-							&#8594;
-						</button>
-					</div>
-				</div>
-			</div>
---}}
 		</div>
 	</article>
+	@endif
 	<!-- Plate Establishment Location -->
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full">
@@ -127,11 +104,11 @@
 	<!-- Ratings -->
 	@if ($latestRatings)
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
-		<div class="px-4 py-4 w-full tracking-wider">
+		<div class="px-4 py-4 w-full tracking-wider border-b border-gray-400">
 			<span class="text-2xl">Últimas Avaliações:</span>
 		</div>
 		@foreach ($latestRatings as $rating)
-		<div class="px-4 py-4 w-full border-t border-gray-400 flex flex-col">
+		<div class="px-4 py-4 w-full flex flex-col">
 			<div class="flex justify-between py-2">
 				<div class="flex flex-col self-center">
 					{{$rating['user']->name}}<br>

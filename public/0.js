@@ -36,10 +36,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     slides: {
       type: Array
+    },
+    slideCounter: {
+      type: Boolean
     }
   },
   data: function data() {
@@ -92,58 +101,79 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.hasSlides
-    ? _c(
-        "div",
-        { staticClass: "mx-auto relative inline-block" },
-        [
-          _vm._l(_vm.slides, function(slide) {
-            return _c("img", {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.slides[_vm.activeSlide].id === slide.id,
-                  expression: "slides[activeSlide].id === slide.id"
-                }
-              ],
-              key: slide.id,
-              staticClass: "max-h-screen min-height-350",
-              attrs: { src: _vm.imgPath(slide.path) }
-            })
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "absolute inset-0 flex" }, [
-            _c(
-              "div",
-              { staticClass: "flex items-center justify-start w-1/2" },
-              [
-                _c(
-                  "button",
+    ? _c("div", { staticClass: "mx-auto" }, [
+        _c(
+          "div",
+          { staticClass: "mx-auto relative inline-block" },
+          [
+            _vm._l(_vm.slides, function(slide) {
+              return _c("img", {
+                directives: [
                   {
-                    staticClass:
-                      "bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6",
-                    on: { click: _vm.decrementSlide }
-                  },
-                  [_vm._v("\n\t\t\t\t←\n\t\t\t")]
-                )
-              ]
-            ),
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.slides[_vm.activeSlide].id === slide.id,
+                    expression: "slides[activeSlide].id === slide.id"
+                  }
+                ],
+                key: slide.id,
+                staticClass: "max-h-80-screen min-h-350",
+                attrs: { src: _vm.imgPath(slide.path) }
+              })
+            }),
             _vm._v(" "),
-            _c("div", { staticClass: "flex items-center justify-end w-1/2" }, [
+            _c("div", { staticClass: "absolute inset-0 flex" }, [
               _c(
-                "button",
-                {
-                  staticClass:
-                    "bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -mr-6",
-                  on: { click: _vm.incrementSlide }
-                },
-                [_vm._v("\n\t\t\t\t→\n\t\t\t")]
+                "div",
+                { staticClass: "flex items-center justify-start w-1/2" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6",
+                      on: { click: _vm.decrementSlide }
+                    },
+                    [_vm._v("\n\t\t\t\t\t←\n\t\t\t\t")]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "flex items-center justify-end w-1/2" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -mr-6",
+                      on: { click: _vm.incrementSlide }
+                    },
+                    [_vm._v("\n\t\t\t\t\t→\n\t\t\t\t")]
+                  )
+                ]
               )
             ])
-          ])
-        ],
-        2
-      )
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "px-4 pt-3 w-full tracking-wider text-center text-gray-700"
+          },
+          [
+            _c("span", {}, [
+              _vm._v(
+                _vm._s(_vm.activeSlide + 1) + " / " + _vm._s(_vm.slides.length)
+              )
+            ])
+          ]
+        )
+      ])
     : _vm._e()
 }
 var staticRenderFns = []

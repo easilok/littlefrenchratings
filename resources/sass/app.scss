@@ -467,6 +467,10 @@ $breakpoint-md: theme('screens.md');
 	}
 }
 
-.min-height-350 {
+.min-h-350 {
 	min-height: 350px;
+}
+
+.max-h-80-screen {
+	max-height: 80vh;
 }
