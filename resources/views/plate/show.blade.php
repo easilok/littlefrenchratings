@@ -9,8 +9,9 @@
 		<a class="btn-std btn-blue" href="/plate/{{$plate->id}}/edit">Editar</a>
 	</div>
 	@endif
-
+	<!-- Generic Information -->
 	<article class="rounded-lg border border-gray-400 shadow-lg flex w-full flex-wrap my-4">
+		<!-- Plate Properties -->
 		<div class="w-full md:w-3/5 md:border-r md:border-gray-400">
 			<div class="flex flex-col justify-between h-full">
 				<div class="px-4 py-4">
@@ -61,6 +62,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- Plate Cover -->
 		<div class="p-2 w-full md:w-2/5 border-t border-gray-400 md:border-0 flex">
 			<div class="w-full self-center">
 				@if ($plate->cover->count() > 0)
@@ -71,6 +73,41 @@
 			</div>
 		</div>
 	</article>
+	<!-- Plate Photos -->
+	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
+		<div class="p-6 w-full flex ">
+			<image-slideshow :slides=@json($plate->images)></image-slideshow>
+{{--
+			<div class="mx-auto relative inline-block" x-data="{ activeSlide: 0, slides: {{$plate->images}} }">
+				<!-- slides -->
+				<template x-for="slide in slides" :key="slide.id">
+					<img
+						class="max-h-screen min-height-350"
+						x-show="slides[activeSlide].id === slide.id"
+						:src="'/storage/uploads/'+slide.path">
+				</template>
+				<!-- Prev/Next Arrows -->
+				<div class="absolute inset-0 flex">
+					<div class="flex items-center justify-start w-1/2">
+						<button
+							class="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+							x-on:click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1">
+							&#8592;
+						</button>
+					</div>
+					<div class="flex items-center justify-end w-1/2">
+						<button
+							class="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -mr-6"
+							x-on:click="activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1">
+							&#8594;
+						</button>
+					</div>
+				</div>
+			</div>
+--}}
+		</div>
+	</article>
+	<!-- Plate Establishment Location -->
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full">
 			<div class="w-full overflow-hidden">
@@ -87,6 +124,7 @@
 			</div>
 		</div>
 	</article>
+	<!-- Ratings -->
 	@if ($latestRatings)
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full tracking-wider">

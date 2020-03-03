@@ -7,5 +7,6 @@
     "/svg/icons/map.svg": "/svg/icons/map.svg",
     "/svg/icons/paper-plane.svg": "/svg/icons/paper-plane.svg",
     "/svg/icons/plus.svg": "/svg/icons/plus.svg",
-    "/svg/icons/telephone.svg": "/svg/icons/telephone.svg"
+    "/svg/icons/telephone.svg": "/svg/icons/telephone.svg",
+    "/js/libraries/alpine.js": "/js/libraries/alpine.js"
 }

@@ -23,14 +23,8 @@
 </script>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+		{{-- @isset ($useVueJs) --}}
+		<script src="{{ asset('js/app.js') }}" defer></script>
     <style>
       [v-cloak] > * {
         display: none;
@@ -45,6 +39,16 @@
         /* background-image: url('/css/loadingInfinity.gif'); */
       }
     </style>
+		{{-- @else --}}
+		<script src="{{ asset('js/libraries/alpine.js') }}" defer></script>
+		{{-- @endisset --}}
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="{{$layoutTheme}}">
     <div id="app" v-cloak>

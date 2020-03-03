@@ -34,8 +34,11 @@ Vue.prototype.App = window.App;
 
 Vue.component("navbar", require("./components/navbarDroppable.vue").default);
 
+const ImageSlideshow = () => import("./components/ImageSlideShow.vue");
+
 const app = new Vue({
     el: '#app',
 		components: {
+			ImageSlideshow,
 		}
 });

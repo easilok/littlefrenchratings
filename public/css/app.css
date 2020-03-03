@@ -12003,6 +12003,10 @@ progress[value]::-moz-progress-bar {
   background-color: #fbd38d;
 }
 
+.min-height-350 {
+  min-height: 350px;
+}
+
 @media (min-width: 640px){
   .sm\:sr-only{
     position: absolute;

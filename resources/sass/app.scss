@@ -466,3 +466,7 @@ $breakpoint-md: theme('screens.md');
 		background-color: $platformMainColorHover;
 	}
 }
+
+.min-height-350 {
+	min-height: 350px;
+}
