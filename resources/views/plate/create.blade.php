@@ -67,11 +67,21 @@
 				</div>
 				<!-- Image -->
 				<div class="mb-4">
-					<label for="photo" class="form-label">Imagem para o prato:</label>
+					<label for="photo" class="form-label">Imagem de capa para o prato:</label>
 					<input id="photo" type="file" class="form-input" name="photo">
 					@if ($errors->has('photo'))
 					<span class="input-validation-error">
 						<strong>{{ $errors->first('photo') }}</strong>
+					</span>
+					@endif
+				</div>
+				<!-- Imagens -->
+				<div class="mb-4">
+					<label for="photos" class="form-label">Outras Imagens:</label>
+					<input id="photos" type="file" class="form-input" name="photos[]" multiple>
+					@if ($errors->has('photos'))
+					<span class="input-validation-error">
+						<strong>{{ $errors->first('photos') }}</strong>
 					</span>
 					@endif
 				</div>

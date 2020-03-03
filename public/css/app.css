@@ -12000,7 +12000,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .hover\:text-platform-color:hover {
-  background-color: #fbd38d;
+  color: #fbd38d;
 }
 
 .min-h-350 {
@@ -12009,6 +12009,21 @@ progress[value]::-moz-progress-bar {
 
 .max-h-80-screen {
   max-height: 80vh;
+}
+
+.plate-cover-image {
+  max-height: 350px;
+  border-radius: 0.5rem;
+}
+
+.check-in-icon {
+  height: 24px;
+  display: inline-block;
+}
+
+.field-icon {
+  height: 20px;
+  display: inline-block;
 }
 
 @media (min-width: 640px){

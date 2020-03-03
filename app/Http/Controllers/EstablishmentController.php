@@ -227,6 +227,19 @@ class EstablishmentController extends Controller
 			]);
 		}
 
+		if ($request->hasFile('photos')) {
+			foreach($request->file('photos') as $photo) {
+				$path = $photo->store($this->Plate_Photo_Folder); 
+
+				Images::Create([
+					'path' => substr($path, strlen($this->Plate_Photo_Folder) + 1),
+					'plate_id' => $plate->id,
+					'user_id' => Auth::id(),
+					'cover' => false,
+				]);
+			}
+		}
+
 		return redirect('/establishment/'.$establishment->id);
 	}
 

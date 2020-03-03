@@ -23,9 +23,9 @@
 					</span>
 					<div class="mx-2 my-3 w-full">
 						@if ($plate->cover->count() > 0)
-						<img src="/storage/uploads/{{$plate->cover->first()->path}}" alt="{{$plate->name}}">
+						<img class="plate-cover-image mx-auto" src="/storage/uploads/{{$plate->cover->first()->path}}" alt="{{$plate->name}}">
 						@else
-						<img src="/css/icons/francesinha_animated.png" alt="{{$plate->name}}">
+						<img class="plate-cover-image mx-auto" src="/css/icons/francesinha_animated.png" alt="{{$plate->name}}">
 						@endif
 					</div>
 				</div>
