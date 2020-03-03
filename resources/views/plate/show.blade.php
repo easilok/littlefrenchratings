@@ -74,13 +74,13 @@
 		</div>
 	</article>
 	<!-- Plate Photos -->
-	@if ($plate->images->count() > 1)
+	@if ($plate->images->count() > 0)
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full tracking-wider border-b border-gray-400">
 			<span class="text-2xl">Registo Fotográfico:</span>
 		</div>
 		<div class="p-6 w-full flex flex-wrap">
-			<image-slideshow :slides=@json($plate->images)></image-slideshow>
+			<image-slideshow :slides=@json($plate->images) slide-counter></image-slideshow>
 		</div>
 	</article>
 	@endif

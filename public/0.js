@@ -59,6 +59,9 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     hasSlides: function hasSlides() {
       return this.slides.length > 0;
+    },
+    hasNavigation: function hasNavigation() {
+      return this.slides.length > 1;
     }
   },
   methods: {
@@ -118,61 +121,70 @@ var render = function() {
                 ],
                 key: slide.id,
                 staticClass: "max-h-80-screen min-h-350",
-                attrs: { src: _vm.imgPath(slide.path) }
+                attrs: { src: _vm.imgPath(slide.path) },
+                on: { click: _vm.incrementSlide }
               })
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "absolute inset-0 flex" }, [
-              _c(
-                "div",
-                { staticClass: "flex items-center justify-start w-1/2" },
-                [
+            _vm.hasNavigation
+              ? _c("div", { staticClass: "absolute inset-0 flex" }, [
                   _c(
-                    "button",
-                    {
-                      staticClass:
-                        "bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6",
-                      on: { click: _vm.decrementSlide }
-                    },
-                    [_vm._v("\n\t\t\t\t\t←\n\t\t\t\t")]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "flex items-center justify-end w-1/2" },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -mr-6",
-                      on: { click: _vm.incrementSlide }
-                    },
-                    [_vm._v("\n\t\t\t\t\t→\n\t\t\t\t")]
-                  )
-                ]
-              )
-            ])
+                    "div",
+                    { staticClass: "flex items-center justify-start w-1/2" },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "bg-teal-100 text-teal-500 hover:text-platform-color font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6",
+                          on: { click: _vm.decrementSlide }
+                        },
+                        [_vm._v("\n\t\t\t\t\t←\n\t\t\t\t")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm.hasNavigation
+                    ? _c(
+                        "div",
+                        { staticClass: "flex items-center justify-end w-1/2" },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "bg-teal-100 text-teal-500 hover:text-platform-color font-bold hover:shadow-lg rounded-full w-12 h-12 -mr-6",
+                              on: { click: _vm.incrementSlide }
+                            },
+                            [_vm._v("\n\t\t\t\t\t→\n\t\t\t\t")]
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ])
+              : _vm._e()
           ],
           2
         ),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "px-4 pt-3 w-full tracking-wider text-center text-gray-700"
-          },
-          [
-            _c("span", {}, [
-              _vm._v(
-                _vm._s(_vm.activeSlide + 1) + " / " + _vm._s(_vm.slides.length)
-              )
-            ])
-          ]
-        )
+        _vm.slideCounter && _vm.hasNavigation
+          ? _c(
+              "div",
+              {
+                staticClass:
+                  "px-4 pt-3 w-full tracking-wider text-center text-gray-700"
+              },
+              [
+                _c("span", {}, [
+                  _vm._v(
+                    _vm._s(_vm.activeSlide + 1) +
+                      " / " +
+                      _vm._s(_vm.slides.length)
+                  )
+                ])
+              ]
+            )
+          : _vm._e()
       ])
     : _vm._e()
 }
