@@ -126,7 +126,7 @@
 			<div class="w-full overflow-hidden">
 				<iframe height="320px" class="w-full" src="https://www.google.com/maps/embed/v1/place?
 															q={{$plate->establishment->location}}
-															&key=AIzaSyC6F2I5PmR3YM9gx4xC39JnwN5GMJAfnq4
+															&key={{ env('GOOGLE_API_KEY', '') }}
 															&zoom=18&maptype=satellite"  allowfullscreen
 								frameborder="0"
 								scrolling="yes"
