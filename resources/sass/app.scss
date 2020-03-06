@@ -282,12 +282,29 @@ body.dark-theme .form-input {
 	max-width: 650px;
 }
 
-.form-center-card {
-    @apply shadow-xl border border-gray-400 rounded-lg px-8 pt-6 pb-8 mb-4 w-full mx-2;
+.form-center-card,
+.form-center-card-ext-p {
+    @apply shadow-xl border border-gray-400 rounded-lg mb-4 w-full mx-2;
 
-		> .remove-padding-x {
-			@apply -mx-8 px-8;
-		}
+}
+ 
+.form-center-card-ext-p {
+	.item-row {
+		@apply px-8; 
+	}
+	.item-title {
+		@apply pt-3 mb-3;
+	}
+	.item-footer {
+		@apply pb-6;
+	}
+}
+
+.form-center-card {
+	@apply pt-6 pb-8 px-8;
+	> .remove-padding-x {
+		@apply -mx-8 px-8;
+	}
 }
 
 @screen md {

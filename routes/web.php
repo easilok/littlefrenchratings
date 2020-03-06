@@ -43,11 +43,19 @@ Route::group (['middleware' => 'auth'], function() {
 
 	Route::get('/plate/{plate}', 'PlateController@show');
 
+	Route::get('/plate/{plate}/taste/create', 'PlateController@create_taste');
+
+	Route::post('/plate/{plate}/taste', 'PlateController@store_taste');
+
 	Route::get('/plate/{plate}/edit', 'PlateController@edit');
 
 	Route::post('/plate', 'PlateController@store');
 
 	Route::patch('/plate/{plate}', 'PlateController@update');
+
+	Route::get('/my-tastes/', 'TasteController@index');
+
+	Route::get('/taste/', 'TasteController@index');
 
 	Route::get('user/register', 'UserController@create');
 

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Plate extends Model
@@ -88,7 +89,7 @@ class Plate extends Model
 	}
 
 	public function averagePrice() {
-		$this->tastes;
+		$this->tastes = $this->tastes->where('price', '>', 0);
 
 		if ($this->tastes->count() > 0) {
 			$this->priceAvg = $this->tastes->average('price');

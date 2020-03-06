@@ -6,6 +6,7 @@ use App\Models\Configuration;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 
 class User extends Authenticatable
 {
@@ -98,5 +99,36 @@ class User extends Authenticatable
 		public function images() {
 			return $this->hasMany('App\Models\Image');
 		}
+
+		public function nextTastes() {
+
+			$nextTastes = $this->tastes->where('visit_at', '>=', Carbon::now())->sortBy('visit_at');
+			unset($this->tastes);
+
+			$nextTastes->each(function($item) {
+				$item->plate->establishment;
+			});
+
+			$this->nextTastes = $nextTastes;
+			return $nextTastes;
+		}
+
+		public function historyTastes($ignoreRatings = false) {
+ 
+			$historyTastes = $this->tastes->where('visit_at', '<', Carbon::now())->sortBy('visit_at');
+			unset($this->tastes);
+			if ($ignoreRatings) {	
+				// For each taste check if has no ratings
+			}
+
+			$historyTastes->each(function($item) {
+				$item->plate->establishment;
+			});
+
+			$this->historyTastes = $historyTastes;
+
+			return $historyTastes;
+		}
+
 
 }

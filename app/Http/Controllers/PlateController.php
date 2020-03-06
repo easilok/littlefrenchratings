@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Establishment;
 use App\Models\Images;
 use App\Models\Plate;
+use App\Models\Taste;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -120,8 +121,40 @@ class PlateController extends Controller
 				]);
 			}
 		}
-
 		return redirect("/plate/$plate->id");
+	}
 
+	/* Plate Taste Handlers */
+	public function create_taste(Plate $plate) {
+      if (Gate::denies('add')) {
+        abort(403);
+      }
+
+			$plate->establishment;
+			$nextTastes = Auth::user()->nextTastes();
+			/* $historyTastes = Auth::user()->historyTastes(); */
+
+			return view('taste.create', compact(['plate', 'nextTastes']));
+	}
+
+	public function store_taste(Plate $plate, Request $request) {
+		if (Gate::denies('add')) {
+			abort(403);
+		}
+
+		/* Todo: create custom validation for telephone */
+		$request->validate([
+			'visit' => 'required|date',
+			'price' => strlen($request->input('price')) > 0 ? 'numeric' : '',
+		]);
+
+		$taste = Taste::Create([
+			'visit_at' => $request->input('visit'),
+			'price' => strlen($request->input('price')) > 0 ? $request->input('price') : 0,
+			'user_id' => Auth::id(),
+			'plate_id' => $plate->id
+		]);
+
+		return redirect('/taste/my');
 	}
 }

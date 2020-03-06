@@ -18,6 +18,8 @@ class Taste extends Model
 		'price' => 'float'
 	];
 
+	protected $guarded = [];
+
 	/* protected $dates = [ */
 	/* 	'visit_at', 'created_at' */
 	/* ]; */

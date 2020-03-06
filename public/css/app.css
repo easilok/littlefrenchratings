@@ -11810,19 +11810,37 @@ body.dark-theme .form-input {
   max-width: 650px;
 }
 
-.form-center-card {
+.form-center-card,
+.form-center-card-ext-p {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   border-width: 1px;
   border-color: #cbd5e0;
   border-radius: 0.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1.5rem;
-  padding-bottom: 2rem;
   margin-bottom: 1rem;
   width: 100%;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.form-center-card-ext-p .item-row {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.form-center-card-ext-p .item-title {
+  padding-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-center-card-ext-p .item-footer {
+  padding-bottom: 1.5rem;
+}
+
+.form-center-card {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .form-center-card > .remove-padding-x {
