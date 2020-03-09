@@ -103,11 +103,13 @@
 			@foreach ($establishment->plates as $plate)
 			<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col p-2 justify-between">
 				<div class="m-auto">
+					<a class="hover:underline" href="/plate/{{$plate->id}}">
 					@if ($plate->cover->count() > 0)
 						<img class="plate-cover-image mx-auto" src="/storage/uploads/{{$plate->cover->first()->path}}" alt="{{$plate->name}}">
 					@else
 						<img class="plate-cover-image mx-auto" src="/css/icons/francesinha_animated.png" alt="{{$plate->name}}">
 					@endif
+					</a>
 				</div>
 				<div class="text-sm text-center py-2">
 					<a class="hover:underline" href="/plate/{{$plate->id}}">{{$plate->name}}</a>

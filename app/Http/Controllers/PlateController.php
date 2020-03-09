@@ -6,6 +6,7 @@ use App\Models\Establishment;
 use App\Models\Images;
 use App\Models\Plate;
 use App\Models\Taste;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -133,8 +134,13 @@ class PlateController extends Controller
 			$plate->establishment;
 			$nextTastes = Auth::user()->nextTastes();
 			/* $historyTastes = Auth::user()->historyTastes(); */
+			if (Auth::id() === 1) {
+				$users = User::orderBy('name')->get();
+			} else {
+				$users = User::where('id', '>', 1)->orderBy('name')->get();
+			}
 
-			return view('taste.create', compact(['plate', 'nextTastes']));
+			return view('taste.create', compact(['plate', 'nextTastes', 'users']));
 	}
 
 	public function store_taste(Plate $plate, Request $request) {
@@ -150,11 +156,11 @@ class PlateController extends Controller
 
 		$taste = Taste::Create([
 			'visit_at' => $request->input('visit'),
-			'price' => strlen($request->input('price')) > 0 ? $request->input('price') : 0,
+			'price' => $request->input('price'),
 			'user_id' => Auth::id(),
 			'plate_id' => $plate->id
 		]);
 
-		return redirect('/taste/my');
+		return redirect('/my-tastes');
 	}
 }

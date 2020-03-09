@@ -102,7 +102,7 @@ class User extends Authenticatable
 
 		public function nextTastes() {
 
-			$nextTastes = $this->tastes->where('visit_at', '>=', Carbon::now())->sortBy('visit_at');
+			$nextTastes = $this->tastes->where('visit_at', '>=', Carbon::now()->startOfDay())->sortBy('visit_at');
 			unset($this->tastes);
 
 			$nextTastes->each(function($item) {
@@ -113,17 +113,39 @@ class User extends Authenticatable
 			return $nextTastes;
 		}
 
+		public function unratedTastes() {
+			$unratedTastes = $this->tastes->where('visit_at', '<', Carbon::now()->startOfDay())->sortBy('visit_at');
+			unset($this->tastes);
+
+			foreach($unratedTastes as $key => $item) {
+				if ($item->ratings->count() > 0) {
+					$unratedTastes->forget($key);
+				} else {
+					$item->plate->establishment;
+				}
+				unset($item->ratings);
+			};
+
+			$this->unratedTastes = $unratedTastes;
+
+			return $unratedTastes;
+		}
+
 		public function historyTastes($ignoreRatings = false) {
  
-			$historyTastes = $this->tastes->where('visit_at', '<', Carbon::now())->sortBy('visit_at');
+			$historyTastes = $this->tastes->where('visit_at', '<', Carbon::now()->startOfDay())->sortBy('visit_at');
 			unset($this->tastes);
-			if ($ignoreRatings) {	
-				// For each taste check if has no ratings
-			}
 
-			$historyTastes->each(function($item) {
-				$item->plate->establishment;
-			});
+			foreach($historyTastes as $key => $item) {
+				if ($ignoreRatings) {	
+					if ($item->ratings->count() == 0) {
+						$historyTastes->forget($key);
+					}
+					unset($item->ratings);
+				} else {
+					$item->plate->establishment;
+				}
+			};
 
 			$this->historyTastes = $historyTastes;
 

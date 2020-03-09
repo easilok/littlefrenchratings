@@ -16,7 +16,7 @@ class CreatePlatesTable extends Migration
         Schema::create('plates', function (Blueprint $table) {
             $table->bigIncrements('id');
 						$table->string('name');
-						$table->float('price', 6, 2)->default(0);
+						$table->float('price', 6, 2)->nullable()->default(0);
 						$table->string('obs')->nullable();
 						$table->unsignedBigInteger('user_id')->nullable();
 						$table->unsignedBigInteger('establishment_id');

@@ -110,7 +110,7 @@ class EstablishmentController extends Controller
 			'source' => 'required|exists:location_sources,id'
 		]);
 
-		Establishment::Create([
+		$establishment = Establishment::Create([
 			'name' => $request->input('name'),
 			'address' => $request->input('address'),
 			'parish' => $request->input('parish'),
@@ -127,7 +127,7 @@ class EstablishmentController extends Controller
 			'locationsource_id' => $request->input('source')
 		]);
 
-		return redirect('/establishment');
+		return redirect('/establishment/'.$establishment->id);
 
 	}
 

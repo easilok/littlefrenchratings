@@ -138,7 +138,7 @@
 		</div>
 	</article>
 	<!-- Ratings -->
-	@if ($latestRatings)
+	@if ($latestRatings->count() > 0)
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full tracking-wider border-b border-gray-400">
 			<span class="text-2xl">Últimas Avaliações:</span>

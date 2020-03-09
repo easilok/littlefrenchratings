@@ -54,6 +54,29 @@
 						@endif
 					</div>
 				</div>
+				<!-- User -->
+				<div class="mb-4 item-row">
+					<label for="user" class="form-label">
+						Convidado:
+					</label>
+					<div class="relative">
+						<select id="user" name="user" class="form-select">
+						@foreach($users as $user)
+								<option value="{{$user->id}}" 
+								{{ $user->id === Auth::id() ? 'selected' : '' }}
+								>{{$user->name}}</option>
+						@endforeach
+						</select>
+						<div class="form-select-arrow">
+							<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+						</div>
+					</div>
+					@if ($errors->has('user'))
+					<span class="input-validation-error" role="alert">
+						<strong>{{ $errors->first('user') }}</strong>
+					</span>
+					@endif
+				</div>
 				<!-- Create Button -->
 				<div class="item-row item-footer flex justify-end">
 					<button type="submit" class="btn-std btn-platform">
@@ -67,15 +90,19 @@
 	@isset($nextTastes)
 	@if($nextTastes->count() > 0)
   <div class="form-center-card-ext-p mt-5 py-0">
-		<div class="border-b border-gray-400">
-	    <div class="item-row item-title text-xl text-platform-color font-bold">Próximas Provas:</div>
+		<div class="">
+	    <div class="item-row item-title">Próximas Provas:</div>
 		</div>
 		@foreach($nextTastes as $taste)
-    <div class="item-row flex justify-center justify-center py-3{{ $loop-> last ? '' : 'border-b border-gray-400' }}">
-			<div class="w-1/2">
-				<a href="/plate/{{$taste->plate->id}}">{{ $taste->plate->name }}</a> - <a href="/establishment/{{$taste->plate->establishment->id}}">{{ $taste->plate->establishment->name }}, {{ $taste->plate->establishment->parish }}</a>
+    <div class="item-row form-card-list-item item-border-t">
+			<div class="content">
+				<div class="">
+					<a class="hover:underline" href="/plate/{{$taste->plate->id}}">{{ $taste->plate->name }}</a> 
+					- 
+					<a class="hover:underline" href="/establishment/{{$taste->plate->establishment->id}}">{{ $taste->plate->establishment->name }}, {{ $taste->plate->establishment->parish }}</a>
+				</div>
+				<div class="text-right">{{ $taste->visit_at->toDateString() }}</div>
 			</div>
-			<div class="w-1/2 text-right">{{ $taste->visit_at }}</div>
 		</div>
 		@endforeach
 	</div>

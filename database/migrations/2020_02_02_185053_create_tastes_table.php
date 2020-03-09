@@ -18,7 +18,7 @@ class CreateTastesTable extends Migration
 						$table->unsignedBigInteger('plate_id');
 						$table->unsignedBigInteger('user_id');
 						$table->timestamp('visit_at');
-						$table->float('price', 6, 2)->default(0);
+						$table->float('price', 6, 2)->nullable()->default(0);
             $table->timestamps();
 						$table->foreign('plate_id')->references('id')->on('plates')->onDelete('cascade');
 						$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

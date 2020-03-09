@@ -11817,7 +11817,6 @@ body.dark-theme .form-input {
   border-color: #cbd5e0;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-  width: 100%;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
@@ -11830,10 +11829,36 @@ body.dark-theme .form-input {
 .form-center-card-ext-p .item-title {
   padding-top: 0.75rem;
   margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: #ed8936;
+  font-weight: 700;
 }
 
 .form-center-card-ext-p .item-footer {
   padding-bottom: 1.5rem;
+}
+
+.form-card-list-item {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  justify-content: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.form-card-list-item .content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 1;
+          flex: 1 1 0%;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.form-card-list-item .action-icon {
+  padding-left: 1rem;
 }
 
 .form-center-card {
@@ -12029,9 +12054,16 @@ progress[value]::-moz-progress-bar {
   max-height: 80vh;
 }
 
+.h-25-screen {
+  height: 25vh;
+}
+
 .plate-cover-image {
-  max-height: 350px;
+  width: 100%;
+  height: 100%;
   border-radius: 0.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .check-in-icon {
@@ -12042,6 +12074,147 @@ progress[value]::-moz-progress-bar {
 .field-icon {
   height: 20px;
   display: inline-block;
+}
+
+.item-border {
+  border-width: 1px;
+  border-color: #cbd5e0;
+}
+
+.item-border-b {
+  border-bottom-width: 1px;
+  border-color: #cbd5e0;
+}
+
+.item-border-t {
+  border-top-width: 1px;
+  border-color: #cbd5e0;
+}
+
+.platform-edit-icon-holder {
+  top: -5px;
+  right: -5px;
+  opacity: 0.9;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 9999px;
+}
+
+.platform-edit-icon {
+  height: 24px;
+  fill: currentColor;
+  color: #ed8936;
+  display: inline-block;
+}
+
+.card-center-two-columns {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: #cbd5e0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-center-card-ext-p .item-row,
+.card-center-two-columns .item-row {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.form-center-card-ext-p .item-title,
+.card-center-two-columns .item-title {
+  padding-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: #ed8936;
+  font-weight: 700;
+}
+
+.form-center-card-ext-p .row,
+.card-center-two-columns .row {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-center-card-ext-p .row .left-column,
+.card-center-two-columns .row .left-column {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.form-center-card-ext-p .row .right-column,
+.card-center-two-columns .row .right-column {
+  padding: 0.5rem;
+  width: 100%;
+  border-top-width: 1px;
+  border-color: #cbd5e0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.form-center-card-ext-p .left-column,
+.card-center-two-columns .left-column {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.form-center-card-ext-p .right-column,
+.card-center-two-columns .right-column {
+  padding: 0.5rem;
+  width: 100%;
+  border-top-width: 1px;
+  border-color: #cbd5e0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .form-center-card-ext-p .row .left-column,
+.card-center-two-columns .row .left-column {
+    width: 60%;
+    border-right-width: 1px;
+    border-color: #cbd5e0;
+  }
+
+  .form-center-card-ext-p .row .right-column,
+.card-center-two-columns .row .right-column {
+    width: 40%;
+    border-width: 0;
+  }
+
+  .form-center-card-ext-p .left-column,
+.card-center-two-columns .left-column {
+    width: 60%;
+    border-right-width: 1px;
+    border-color: #cbd5e0;
+  }
+
+  .form-center-card-ext-p .right-column,
+.card-center-two-columns .right-column {
+    width: 40%;
+    border-width: 0;
+  }
 }
 
 @media (min-width: 640px){
