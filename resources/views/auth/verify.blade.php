@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto center-card-container">
 	<div class="form-center-card mt-5">
-		<div class="mb-6 text-xl text-platform-color font-bold">{{ __('Verify Your Email Address') }}</div>
+		<h2 class="mb-6 text-xl text-platform-color font-bold">{{ __('Verify Your Email Address') }}</h2>
 
 		<div class="card-body">
 				@if (session('resent'))

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto center-card-container">
 	<div class="form-center-card mt-5">
-		<div class="mb-6 text-xl text-platform-color font-bold">{{ __('Confirm Password') }}</div>
+		<h2 class="mb-6 text-xl text-platform-color font-bold">{{ __('Confirm Password') }}</h2>
 
 		<div class="w-full flex justify-center">
 			{{ __('Please confirm your password before continuing.') }}

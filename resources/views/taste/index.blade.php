@@ -6,7 +6,7 @@
 	@if($nextTastes->count() > 0)
   <div class="form-center-card-ext-p">
 		<div class="">
-	    <div class="item-row item-title">Próximas Provas:</div>
+	    <h2 class="item-row item-title">Próximas Provas:</h2>
 		</div>
 	</div>
 	@foreach($nextTastes as $taste)
@@ -70,7 +70,7 @@
 	@if($historyTastes->count() > 0)
   <div class="form-center-card-ext-p mt-5">
 		<div class="">
-	    <div class="item-row item-title">Histórico de Provas:</div>
+	    <h2 class="item-row item-title">Histórico de Provas:</h2>
 		</div>
 		@foreach($unratedTastes as $taste)
     <div class="item-row form-card-list-item item-border-t">

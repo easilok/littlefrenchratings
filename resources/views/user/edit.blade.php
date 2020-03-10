@@ -19,7 +19,7 @@
 	</div>
 	@endif
   <div class="form-center-card mt-5">
-    <div class="mb-6 text-xl text-platform-color font-bold">{{ $user->name }}</div>
+    <h2 class="mb-6 text-xl text-platform-color font-bold">{{ $user->name }}</h2>
 
     <div class="w-full flex justify-center justify-center">
       <form method="POST" class="w-full justify-center" action="{{ url('/users/'.$user->id) }}">

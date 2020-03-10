@@ -4,7 +4,7 @@
 <div class="container mx-auto ">
   <div class="form-center-card-ext-p mt-5">
 		<div class="border-b border-gray-400 mb-5">
-	    <div class="item-row item-title text-xl text-platform-color font-bold">Criar Nova Prova</div>
+	    <h2 class="item-row item-title text-xl text-platform-color font-bold">Criar Nova Prova</h2>
 		</div>
 
     <div class="w-full flex justify-center justify-center">
@@ -80,7 +80,7 @@
 				<!-- Create Button -->
 				<div class="item-row item-footer flex justify-end">
 					<button type="submit" class="btn-std btn-platform">
-						Criar
+						Agendar
 					</button>
 				</div>
       </form>

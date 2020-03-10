@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto center-card-container">
   <div class="form-center-card mt-5">
-    <div class="mb-6 text-xl text-platform-color font-bold">{{ __('Register') }}</div>
+    <h2 class="mb-6 text-xl text-platform-color font-bold">{{ __('Register') }}</h2>
 
     <div class="w-full flex justify-center justify-center">
       <form method="POST" class="w-full justify-center" action="{{ url('/user/register') }}">

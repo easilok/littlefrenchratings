@@ -4,7 +4,7 @@
 <div class="container mx-auto ">
   <div class="form-center-card mt-5">
 		<div class="remove-padding-x border-b border-gray-400 mb-5">
-	    <div class="mb-6 text-xl text-platform-color font-bold">Criar Novo Estabelecimento</div>
+	    <h2 class="mb-6 text-xl text-platform-color font-bold">Criar Novo Estabelecimento</h2>
 		</div>
 
     <div class="w-full flex justify-center justify-center">
