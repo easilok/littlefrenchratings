@@ -480,8 +480,18 @@ $breakpoint-md: theme('screens.md');
 .bg-platform-color {
 	background-color: $platformMainColor;
 }
+.hover\:bg-platform-main-color {
+	&:hover {
+		background-color: $platformMainColor;
+	}
+}
 .text-platform-color {
 	color: $platformMainColor;
+}
+.hover\:text-platform-main-color {
+	&:hover {
+		color: $platformMainColor;
+	}
 }
 .hover\:bg-platform-color{
 	&:hover {
@@ -539,12 +549,18 @@ $breakpoint-md: theme('screens.md');
 	top: -5px;
 	right: -5px;
 	opacity: .9;
-	@apply shadow-lg p-2 bg-white absolute rounded-full;
+	@apply shadow-xl p-2 bg-white absolute rounded-full border border-gray-400;
+	&:hover {
+		border-color: $platformMainColorHover;
+	}
 }
 
 .platform-edit-icon {
 	height: 24px;
 	@apply fill-current text-platform-color inline-block;
+	&:hover {
+		color: $platformMainColorHover;
+	}
 }
 
 .card-center-two-columns{
@@ -576,9 +592,54 @@ $breakpoint-md: theme('screens.md');
 	}
 }
 
-.img-side-holder {
-
+.taste-rating-button {
+	@apply text-2xl tracking-wider font-medium uppercase cursor-pointer;
+	&:hover {
+		color: $platformMainColor;
+		@apply underline;
+	}
 }
+
+.taste-rating {
+	@apply text-2xl tracking-wider font-medium uppercase cursor-pointer;
+}
+
+.taste-rating__star-icon {
+	height: 80px;
+	// transition: all 1s linear;
+	&:hover {
+		// transform: rotate(360deg);
+	}
+}
+
+.taste-rating--star-back {
+	&.active {
+		fill: #ffc850;
+	}
+	&.deactive {
+		fill:#c0c0c0;
+	}
+}
+
+.taste-rating--star-front {
+	&.active {
+		fill: #ffdc64;
+	}
+	&.deactive {
+		fill:#dcdcdc;
+
+	}
+}
+
+.taste-rating__star-text {
+	  dominant-baseline: central;
+		text-anchor: middle;
+		font-size: 9rem;
+		// transform: rotate(0deg);
+		// transition: none;
+		@apply fill-current text-purple-600 font-bold;
+}
+
 
 @screen md {
 	.form-center-card-ext-p,

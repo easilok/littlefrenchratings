@@ -107,6 +107,8 @@ class User extends Authenticatable
 
 			$nextTastes->each(function($item) {
 				$item->plate->establishment;
+				/* $item->plate->averageRating(); */
+				/* $item->plate->averagePrice(); */
 			});
 
 			$this->nextTastes = $nextTastes;
@@ -120,10 +122,9 @@ class User extends Authenticatable
 			foreach($unratedTastes as $key => $item) {
 				if ($item->ratings->count() > 0) {
 					$unratedTastes->forget($key);
-				} else {
-					$item->plate->establishment;
 				}
 				unset($item->ratings);
+				$item->plate->establishment;
 			};
 
 			$this->unratedTastes = $unratedTastes;
@@ -137,14 +138,26 @@ class User extends Authenticatable
 			unset($this->tastes);
 
 			foreach($historyTastes as $key => $item) {
-				if ($ignoreRatings) {	
-					if ($item->ratings->count() == 0) {
+				if ($item->ratings->count() == 0) {
+					if ($ignoreRatings) {	
 						$historyTastes->forget($key);
 					}
-					unset($item->ratings);
 				} else {
-					$item->plate->establishment;
+					$item->ratingAvg = 0;
+					$item->ratingCount = 0;
+					foreach($item->ratings as $rating) {
+						if ($rating->rating_value > 0) {
+							$item->ratingAvg += $rating->rating_value;
+							$item->ratingCount++;
+						}
+					}
+
+					if ($item->ratingCount > 0) {
+						$item->ratingAvg /= $item->ratingCount;
+					}
 				}
+				unset($item->ratings);
+				$item->plate->establishment;
 			};
 
 			$this->historyTastes = $historyTastes;
