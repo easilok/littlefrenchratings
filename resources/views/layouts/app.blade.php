@@ -40,12 +40,11 @@
       }
     </style>
 		{{-- @else --}}
-		<script src="{{ asset('js/libraries/alpine.js') }}" defer></script>
+		{{-- <script src="{{ asset('js/libraries/alpine.js') }}" defer></script> --}}
 		{{-- @endisset --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">

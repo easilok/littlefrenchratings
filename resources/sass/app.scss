@@ -1,5 +1,7 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Domine|Roboto&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Domine:400,700|Roboto:400,400i,700&display=swap');
 
 // Variables
 @import 'variables';
@@ -69,7 +71,15 @@
 
 /* fixing tailwindcss update */
 html {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Domine', serif;
 }
 
 h1,
@@ -545,6 +555,7 @@ $breakpoint-md: theme('screens.md');
 	@apply border-t border-gray-400;
 }
 
+.platform-remove-icon-holder,
 .platform-edit-icon-holder {
 	top: -5px;
 	right: -5px;
@@ -555,6 +566,7 @@ $breakpoint-md: theme('screens.md');
 	}
 }
 
+.platform-remove-icon,
 .platform-edit-icon {
 	height: 24px;
 	@apply fill-current text-platform-color inline-block;

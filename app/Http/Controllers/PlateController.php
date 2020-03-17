@@ -148,7 +148,6 @@ class PlateController extends Controller
 			abort(403);
 		}
 
-		/* Todo: create custom validation for telephone */
 		$request->validate([
 			'visit' => 'required|date',
 			'price' => strlen($request->input('price')) > 0 ? 'numeric' : '',

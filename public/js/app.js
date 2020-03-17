@@ -31971,13 +31971,18 @@ Vue.prototype.App = window.App;
 Vue.component("navbar", __webpack_require__(/*! ./components/navbarDroppable.vue */ "./resources/js/components/navbarDroppable.vue")["default"]);
 
 var ImageSlideshow = function ImageSlideshow() {
-  return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./components/ImageSlideShow.vue */ "./resources/js/components/ImageSlideShow.vue"));
+  return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/ImageSlideShow.vue */ "./resources/js/components/ImageSlideShow.vue"));
+};
+
+var DeleteForm = function DeleteForm() {
+  return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(0)]).then(__webpack_require__.bind(null, /*! ./components/DeleteForm.vue */ "./resources/js/components/DeleteForm.vue"));
 };
 
 var app = new Vue({
   el: '#app',
   components: {
-    ImageSlideshow: ImageSlideshow
+    ImageSlideshow: ImageSlideshow,
+    DeleteForm: DeleteForm
   }
 });
 

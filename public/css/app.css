@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);/* Navbar */
+@import url(https://fonts.googleapis.com/css?family=Domine|Roboto&display=swap);/* Navbar */
 
 /**
  * This injects Tailwind's base styles, which is a combination of
@@ -11466,7 +11466,15 @@ video {
 /* fixing tailwindcss update */
 
 html {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Domine", serif;
 }
 
 h1,
@@ -12099,6 +12107,7 @@ progress[value]::-moz-progress-bar {
   border-color: #cbd5e0;
 }
 
+.platform-remove-icon-holder,
 .platform-edit-icon-holder {
   top: -5px;
   right: -5px;
@@ -12112,10 +12121,12 @@ progress[value]::-moz-progress-bar {
   border-color: #cbd5e0;
 }
 
+.platform-remove-icon-holder:hover,
 .platform-edit-icon-holder:hover {
   border-color: #fbd38d;
 }
 
+.platform-remove-icon,
 .platform-edit-icon {
   height: 24px;
   fill: currentColor;
@@ -12123,6 +12134,7 @@ progress[value]::-moz-progress-bar {
   display: inline-block;
 }
 
+.platform-remove-icon:hover,
 .platform-edit-icon:hover {
   color: #fbd38d;
 }

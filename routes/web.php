@@ -57,6 +57,12 @@ Route::group (['middleware' => 'auth'], function() {
 
 	Route::get('/taste/', 'TasteController@index');
 
+	Route::get('/taste/{taste}/edit', 'TasteController@edit');
+
+	Route::patch('/taste/{taste}', 'TasteController@update');
+
+	Route::delete('/taste/{taste}', 'TasteController@destroy');
+
 	Route::get('user/register', 'UserController@create');
 
 	Route::post('user/register', 'UserController@store');
