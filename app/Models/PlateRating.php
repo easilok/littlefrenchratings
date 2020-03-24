@@ -20,6 +20,9 @@ class PlateRating extends Model
 		'rating_value' => 'integer',
 	];
 
+
+	protected $guarded = [];
+
 	public function plate() {
 		return $this->belongsTo('App\Models\Plate');
 	}

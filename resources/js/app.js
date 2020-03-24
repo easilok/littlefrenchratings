@@ -35,6 +35,7 @@ Vue.prototype.App = window.App;
 Vue.component("navbar", require("./components/navbarDroppable.vue").default);
 
 const ImageSlideshow = () => import("./components/ImageSlideShow.vue");
+const Rating = () => import("./components/Rating.vue");
 const DeleteForm = () => import("./components/DeleteForm.vue");
 
 const app = new Vue({
@@ -42,5 +43,6 @@ const app = new Vue({
 		components: {
 			ImageSlideshow,
 			DeleteForm,
+			Rating,
 		}
 });

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plate;
+use App\Models\PlateRating;
+use App\Models\Rating;
 use App\Models\Taste;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -89,4 +91,54 @@ class TasteController extends Controller
 			return redirect('/my-tastes');
 		}
 
+		public function create_rating(Taste $taste) {
+			if (Gate::denies('view')) {
+				abort(403);
+			}
+
+			$ratings = Rating::orderBy('order', 'ASC')->orderBy('name', 'ASC')->get();
+
+			return view('rating.create', compact(['taste', 'ratings']));
+		}
+
+		public function store_rating(Taste $taste, Request $request) {
+			if (Gate::denies('view')) {
+				abort(403);
+			}
+
+			// Get all ratings
+			$ratings = Rating::all();
+
+			// Build validate array based on rating type
+			$validateArray = [];
+
+			foreach($ratings as $key => $rating) {
+				if ($rating->type < 2) {
+					$validateArray[$rating->slug."_value"] = 'required|numeric|min:1|max:5';
+				}
+				if ($rating->type > 0) {
+					$validateArray[$rating->slug."_text"] = 'required|min:1|max:255';
+				}
+			}
+
+			$request->validate($validateArray);
+
+			try {
+				// Save Rating
+				foreach($ratings as $key => $rating) {
+					PlateRating::Create([
+						'plate_id' => $taste->plate->id,
+						'rating_id' => $rating->id,
+						'user_id' => Auth::id(),
+						'taste_id' => $taste->id,
+						'rating_value' => $rating->type < 2 ? $request->input($rating->slug.'_value') : 0,
+						'rating_text' => $rating->type > 0 ? $request->input($rating->slug.'_text'): '',
+					]);
+				}
+			} catch (Exception $e) {
+				abort(403);
+			}
+
+			return redirect('/my-tastes');
+		}
 }
