@@ -18,6 +18,7 @@ class CreateImagesTable extends Migration
 						$table->string('path')->unique();
 						$table->unsignedInteger('order')->default(0);
 						$table->boolean('visible')->default(true);
+						$table->boolean('cover')->default(true);
 						$table->unsignedBigInteger('plate_id');
 						$table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();

@@ -1,4 +1,15 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/app.js": "/js/app.js?id=0c34e754e489d65a5487",
+    "/css/app.css": "/css/app.css?id=0e0511f380397b84246c",
+    "/css/icons/francesinha_animated.png": "/css/icons/francesinha_animated.png?id=1fa5fa54476744ae4bea",
+    "/css/icons/nibble_francesinhas.jpg": "/css/icons/nibble_francesinhas.jpg?id=b5643ab76abde76eea8e",
+    "/svg/icons/check-in.svg": "/svg/icons/check-in.svg?id=9646ad15fbde80a7453a",
+    "/svg/icons/delete.svg": "/svg/icons/delete.svg?id=c502b185955ee0f7fe6c",
+    "/svg/icons/mail.svg": "/svg/icons/mail.svg?id=9a04ab3055aa1c039aa2",
+    "/svg/icons/map.svg": "/svg/icons/map.svg?id=99af8800513c6cc99007",
+    "/svg/icons/paper-plane.svg": "/svg/icons/paper-plane.svg?id=651167944f0b5a22b3cc",
+    "/svg/icons/pencil.svg": "/svg/icons/pencil.svg?id=6cda1fcfdd3fc4a8c455",
+    "/svg/icons/plus.svg": "/svg/icons/plus.svg?id=b888d710f54891d41802",
+    "/svg/icons/telephone.svg": "/svg/icons/telephone.svg?id=c58af9437e1870855024",
+    "/js/libraries/alpine.js": "/js/libraries/alpine.js?id=40c7d2ac8d76f488673c"
 }

@@ -16,8 +16,11 @@ class CreateRatingsTable extends Migration
         Schema::create('ratings', function (Blueprint $table) {
             $table->bigIncrements('id');
 						$table->string('name')->unique();
+						$table->string('slug')->unique();
 						$table->string('description');
 						$table->unsignedInteger('type')->default(1);
+						$table->unsignedInteger('order')->default(1);
+						$table->boolean('required')->default(true);
 						$table->boolean('enable');
             $table->timestamps();
 				});
@@ -29,7 +32,6 @@ class CreateRatingsTable extends Migration
 						$table->unsignedBigInteger('taste_id');
 						$table->unsignedInteger('rating_value');
 						$table->text('rating_text');
-						$table->float('price', 6, 2)->default(0);
 						$table->timestamps();
 						$table->foreign('plate_id')->references('id')->on('plates')->onDelete('cascade');
 						$table->foreign('rating_id')->references('id')->on('ratings')->onDelete('cascade');

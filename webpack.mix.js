@@ -15,5 +15,9 @@ require('mix-tailwindcss');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .copy("resources/sass/icons/*.png", "public/css/icons", false)
+    .copy("resources/sass/icons/*.jpg", "public/css/icons", false)
     .copy("resources/sass/icons/*.svg", "public/svg/icons", false)
+    .copy("resources/js/libraries/*.*", "public/js/libraries", false)
     .tailwind('./tailwind.config.js');
+
+mix.version();

@@ -17,3 +17,22 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+//Platform theme
+$platformMainColor: theme('colors.orange.500');
+$platformMainColorHover: theme('colors.orange.300');
+$platformGradientStart: theme('colors.orange.500');
+$platformGradientEnd: theme('colors.orange.300');
+$platformTextColor: theme('colors.white');
+
+/* Navbar */
+$platformNavTextColor: theme('colors.teal.100');
+$platformNavHoverColor: theme('colors.gray.700');
+$platformNavDropdownBg: theme('colors.gray.200');
+$platformNavDropdownText: theme('colors.black');
+
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Domine|Roboto&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Domine:400,700|Roboto:400,400i,700&display=swap');
+

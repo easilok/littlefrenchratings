@@ -1,6 +1,3 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
 
@@ -69,7 +66,15 @@
 
 /* fixing tailwindcss update */
 html {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Domine', serif;
 }
 
 h1,
@@ -168,6 +173,13 @@ body.dark-theme {
     }
 }
 
+.btn-platform {
+	background-color: $platformMainColor;
+	&:hover {
+		background-color: $platformMainColorHover;
+	}
+}
+
 .form-group {
     @apply mb-4;
 }
@@ -183,7 +195,8 @@ body.dark-theme .form-label {
 .form-input {
     @apply bg-transparent appearance-none border-b w-full py-2 px-3 text-gray-800 leading-tight border-blue-400;
     &:focus {
-        @apply border-green-400;
+        // @apply border-green-400;
+				border-color: $platformMainColor;
     }
 }
 
@@ -250,6 +263,7 @@ body.dark-theme .form-input {
     }
 }
 
+/*
 .login-form-label {
     @apply block text-gray-500 font-bold mb-1 pr-4;
 }
@@ -266,9 +280,46 @@ body.dark-theme .form-input {
         @apply outline-none bg-white border-teal-500;
     }
 }
+*/
+
+.center-card-container {
+	@apply flex justify-center;
+	max-width: 650px;
+}
+
+.form-center-card,
+.form-center-card-ext-p {
+    @apply shadow-xl border border-gray-400 rounded-lg mb-4 mx-2;
+
+}
+ 
+.form-center-card-ext-p {
+	.item-row {
+		@apply px-8; 
+	}
+	.item-title {
+		@apply pt-3 mb-3 text-xl text-platform-color font-bold;
+	}
+	.item-footer {
+		@apply pb-6;
+	}
+}
+
+.form-card-list-item {
+	@apply flex justify-center justify-center py-3;
+	.content {
+		@apply flex flex-1 justify-between;
+	}
+	.action-icon {
+		@apply pl-4;
+	}
+}
 
 .form-center-card {
-    @apply shadow-xl border border-gray-400 rounded-lg px-8 pt-6 pb-8 mb-4 w-full mx-2;
+	@apply pt-6 pb-8 px-8;
+	> .remove-padding-x {
+		@apply -mx-8 px-8;
+	}
 }
 
 @screen md {
@@ -288,6 +339,7 @@ body.dark-theme .form-input {
 
 .users-list-header {
     @apply font-bold text-base hidden;
+		color: $platformMainColor;
 }
 
 .users-list-label {
@@ -301,8 +353,15 @@ body.dark-theme .form-input {
 .users-list-item {
     @apply text-left px-3 w-2/3;
     > a:hover {
-        @apply text-teal-400;
+        // @apply text-teal-400;
+				color: $platformMainColor;
     }
+		.stop-color-start {
+			stop-color: $platformGradientStart;
+		}
+		.stop-color-end {
+			stop-color: $platformGradientEnd;
+		}
 }
 
 @screen md {
@@ -315,11 +374,15 @@ body.dark-theme .form-input {
     }
 
     .users-list-item {
-        @apply w-1/5 text-center;
+        @apply w-2/12 text-center;
     }
 
     .users-list-lg {
-        @apply w-2/5;
+        @apply w-5/12;
+    }
+
+    .users-list-sm {
+        @apply w-1/12;
     }
 }
 
@@ -418,3 +481,200 @@ $breakpoint-md: theme('screens.md');
 		@apply border-l border-r border-b border-gray-300 p-3;
 	}
 }
+
+.bg-platform-color {
+	background-color: $platformMainColor;
+}
+.hover\:bg-platform-main-color {
+	&:hover {
+		background-color: $platformMainColor;
+	}
+}
+.text-platform-color {
+	color: $platformMainColor;
+}
+.hover\:text-platform-main-color {
+	&:hover {
+		color: $platformMainColor;
+	}
+}
+.hover\:bg-platform-color{
+	&:hover {
+		background-color: $platformMainColorHover;
+	}
+}
+.hover\:text-platform-color{
+	&:hover {
+		color: $platformMainColorHover;
+	}
+}
+
+.min-h-350 {
+	min-height: 350px;
+}
+
+.max-h-80-screen {
+	max-height: 80vh;
+}
+
+.h-25-screen {
+	height: 25vh;
+}
+
+.plate-cover-image {
+	// max-height: 350px;
+	width: 100%;
+	height: 100%;
+	@apply rounded-lg object-contain;
+}
+
+.check-in-icon {
+	height: 24px;
+	@apply inline-block;
+}
+
+.field-icon {
+	height: 20px;
+	@apply inline-block;
+}
+
+.item-border {
+	@apply border border-gray-400;
+}
+
+.item-border-b {
+	@apply border-b border-gray-400;
+}
+
+.item-border-t {
+	@apply border-t border-gray-400;
+}
+
+.platform-remove-icon-holder,
+.platform-edit-icon-holder {
+	top: -5px;
+	right: -5px;
+	opacity: .9;
+	@apply shadow-xl p-2 bg-white absolute rounded-full border border-gray-400;
+	&:hover {
+		border-color: $platformMainColorHover;
+	}
+}
+
+.platform-remove-icon,
+.platform-edit-icon {
+	height: 24px;
+	@apply fill-current text-platform-color inline-block;
+	&:hover {
+		color: $platformMainColorHover;
+	}
+}
+
+.card-center-two-columns{
+	@apply rounded-lg border border-gray-400 shadow-lg;
+}
+
+.form-center-card-ext-p,
+.card-center-two-columns {
+	.item-row {
+		@apply px-8; 
+	}
+	.item-title {
+		@apply pt-3 mb-3 text-xl text-platform-color font-bold;
+	}
+	.row {
+		@apply px-2 flex w-full flex-wrap my-4;
+		.left-column {
+			@apply w-full flex flex-col;
+		}
+		.right-column {
+			@apply p-2 w-full border-t border-gray-400 flex flex-col;
+		}
+	}
+	.left-column {
+		@apply w-full flex flex-col;
+	}
+	.right-column {
+		@apply p-2 w-full border-t border-gray-400 flex flex-col;
+	}
+}
+
+.taste-rating-button {
+	@apply text-2xl tracking-wider font-medium uppercase cursor-pointer;
+	&:hover {
+		color: $platformMainColor;
+		@apply underline;
+	}
+}
+
+.taste-rating {
+	@apply text-2xl tracking-wider font-medium uppercase cursor-pointer;
+}
+
+.taste-rating__star-icon {
+	height: 80px;
+	// transition: all 1s linear;
+	&:hover {
+		// transform: rotate(360deg);
+	}
+}
+
+.taste-rating--star-back {
+	&.active {
+		fill: #ffc850;
+	}
+	&.deactive {
+		fill:#c0c0c0;
+	}
+	&.normal {
+		fill: rgba(255, 255, 255, 0);
+	}
+}
+
+.taste-rating--star-front {
+	&.active {
+		fill: #ffdc64;
+	}
+	&.deactive {
+		fill:#dcdcdc;
+
+	}
+	&.normal {
+		// fill: rgba(255, 255, 255, 0);
+		@apply fill-current text-gray-300;
+		stroke: #000000;
+		stroke-width: 10;
+	}
+}
+
+.taste-rating__star-text {
+	  dominant-baseline: central;
+		text-anchor: middle;
+		font-size: 9rem;
+		// transform: rotate(0deg);
+		// transition: none;
+		@apply fill-current text-purple-600 font-bold;
+}
+
+
+@screen md {
+	.form-center-card-ext-p,
+	.card-center-two-columns {
+		.row {
+			.left-column {
+				@apply w-3/5 border-r border-gray-400;
+			}
+			.right-column {
+				@apply w-2/5 border-0;
+			}
+		}
+		.left-column {
+			@apply w-3/5 border-r border-gray-400;
+		}
+		.right-column {
+			@apply w-2/5 border-0;
+		}
+	}
+}
+
+@import "./ratings"

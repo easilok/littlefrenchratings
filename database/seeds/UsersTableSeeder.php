@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\Models\Configuration;
 use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -27,5 +28,7 @@ class UsersTableSeeder extends Seeder
 				if ($role) {
 					$user->role()->attach($role);
 				}
-    }
+
+				$user->ResetConfigurations();
+   }
 }
