@@ -74,9 +74,15 @@
 					</div>
 					@endif
 				</div>
+				@if ($nextTaste)
+				<div class="plate__schedule-next">
+					Próxima visita &#x2192; {{$nextTaste}}
+				</div>
+				@endif
 				@if (Gate::allows('view'))
-				<div class="p-4 mb-2 flex">
-					<a href="/plate/{{$plate->id}}/taste/create/" class="hover:text-platform-color">
+				<div class="plate-schedule">
+					<a href="/plate/{{$plate->id}}/taste/create/" 
+						 class="plate-schedule__link">
 						<svg viewBox="0 0 512 512" xml:space="preserve" class="check-in-icon mr-1 fill-current">
 							<g>
 								<path d="M256,53.333c-64.688,0-117.333,52.635-117.333,117.333S191.313,288,256,288s117.333-52.635,117.333-117.333
@@ -113,7 +119,7 @@
 	@if ($plate->images->count() > 0)
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full tracking-wider border-b border-gray-400">
-			<span class="text-2xl">Registo Fotográfico:</span>
+			<h2 class="text-2xl">Registo Fotográfico:</h2>
 		</div>
 		<div class="p-6 w-full flex flex-wrap">
 			<image-slideshow :slides=@json($plate->images) slide-counter></image-slideshow>
@@ -141,7 +147,7 @@
 	@if ($latestRatings->count() > 0)
 	<article class="rounded-lg border border-gray-400 shadow-lg w-full my-4">
 		<div class="px-4 py-4 w-full tracking-wider border-b border-gray-400">
-			<span class="text-2xl">Últimas Avaliações:</span>
+			<h2 class="text-2xl">Últimas Avaliações:</h2>
 		</div>
 		@foreach ($latestRatings as $rating)
 		<div class="px-4 py-4 w-full flex flex-col">

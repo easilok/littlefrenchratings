@@ -31,6 +31,12 @@ $platformNavHoverColor: theme('colors.gray.700');
 $platformNavDropdownBg: theme('colors.gray.200');
 $platformNavDropdownText: theme('colors.black');
 
+/* Jumping Animation */
+$jumpBigStepUp: 4px;
+$jumpBigStepDown: -4px;
+$jumpSmallStepUp: 1px;
+$jumpSmallStepDown: -1px;
+
 // Fonts
 // @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Domine|Roboto&display=swap');

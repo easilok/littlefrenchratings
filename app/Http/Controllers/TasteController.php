@@ -86,6 +86,8 @@ class TasteController extends Controller
 				abort(403);
 			}
 
+			// Only deletes if no ratings
+
 			$taste->delete();
 
 			return redirect('/my-tastes');
@@ -127,9 +129,7 @@ class TasteController extends Controller
 				// Save Rating
 				foreach($ratings as $key => $rating) {
 					PlateRating::Create([
-						'plate_id' => $taste->plate->id,
 						'rating_id' => $rating->id,
-						'user_id' => Auth::id(),
 						'taste_id' => $taste->id,
 						'rating_value' => $rating->type < 2 ? $request->input($rating->slug.'_value') : 0,
 						'rating_text' => $rating->type > 0 ? $request->input($rating->slug.'_text'): '',

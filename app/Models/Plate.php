@@ -37,7 +37,7 @@ class Plate extends Model
 	}
 
 	public function ratings() {
-		return $this->hasMany('App\Models\PlateRating');
+		return $this->hasManyThrough('App\Models\PlateRating', 'App\Models\Taste');
 	}
 
 	public function cover() {
@@ -61,9 +61,9 @@ class Plate extends Model
 	public function latestRatings() {
 
 		$result = DB::table('plate_rating')->join('tastes', 'plate_rating.taste_id', '=' , 'tastes.id')
-											->selectRaw('plate_rating.plate_id, plate_rating.user_id, plate_rating.taste_id, tastes.visit_at')
-											->where('plate_rating.plate_id', $this->id)
-											->groupBy('plate_rating.plate_id', 'plate_rating.user_id', 'plate_rating.taste_id', 'tastes.visit_at')
+											->selectRaw('tastes.plate_id, tastes.user_id, plate_rating.taste_id, tastes.visit_at')
+											->where('tastes.plate_id', $this->id)
+											->groupBy('tastes.plate_id', 'tastes.user_id', 'plate_rating.taste_id', 'tastes.visit_at')
 											->orderBy('tastes.visit_at', 'DESC')->get();
 
 		$generalRatingId = Rating::where('name', 'Geral')->first()->id;
@@ -71,11 +71,16 @@ class Plate extends Model
 
 		foreach ($result as $key => $item) {
 			$user = User::find($item->user_id);
-			$ratingDate = Taste::find($item->taste_id)->first()->visit_at->toDateString();
-			$ratingAvg = round(PlateRating::where('plate_id', $item->plate_id)->where('user_id', $item->user_id)->where('taste_id', $item->taste_id)->where('rating_value', '>', 0)->avg('rating_value'), 2);
-			$ratingMax = PlateRating::with('rating')->where('plate_id', $item->plate_id)->where('user_id', $item->user_id)->where('taste_id', $item->taste_id)->where('rating_value', '>', 0)->orderBy('rating_value', 'DESC')->first();
-			$ratingMin = PlateRating::with('rating')->where('plate_id', $item->plate_id)->where('user_id', $item->user_id)->where('taste_id', $item->taste_id)->where('rating_value', '>', 0)->orderBy('rating_value', 'ASC')->first();
-			$ratingGeneral = PlateRating::with('rating')->where('plate_id', $item->plate_id)->where('user_id', $item->user_id)->where('taste_id', $item->taste_id)->where('rating_id', $generalRatingId)->first()->rating_text;
+			$tasteRatings = Taste::find($item->taste_id)->ratings()->get();
+			$ratingDate = Taste::find($item->taste_id)->visit_at->toDateString();
+			/* $ratingAvg = round(PlateRating::with('tastes')->where('plate_id', $item->plate_id)->where('user_id', $item->user_id)->where('taste_id', $item->taste_id)->where('rating_value', '>', 0)->avg('rating_value'), 2); */
+			/* $ratingMax = PlateRating::with(['rating', 'taste'])->has('taste.plate_id', $item->plate_id)->where('user_id', $item->user_id)->where('taste_id', $item->taste_id)->where('rating_value', '>', 0)->orderBy('rating_value', 'DESC')->first(); */
+			/* $ratingMin = PlateRating::with(['rating', 'taste'])->where('plate_id', $item->plate_id)->where('user_id', $item->user_id)->where('taste_id', $item->taste_id)->where('rating_value', '>', 0)->orderBy('rating_value', 'ASC')->first(); */
+			/* $ratingGeneral = PlateRating::with(['rating', 'taste'])->where('plate_id', $item->plate_id)->where('user_id', $item->user_id)->where('taste_id', $item->taste_id)->where('rating_id', $generalRatingId)->first()->rating_text; */
+			$ratingAvg = round($tasteRatings->where('rating_value', '>', 0)->avg('rating_value'), 2);
+			$ratingMax = $tasteRatings->where('rating_value', '>', 0)->sortBy('rating_value')->last();
+			$ratingMin = $tasteRatings->where('rating_value', '>', 0)->sortBy('rating_value')->first();
+			$ratingGeneral = $tasteRatings->where('rating_id', $generalRatingId)->first()->rating_text;
 			$collection[] = [
 				'user' => $user, 
 				'visit_at' => $ratingDate,
@@ -101,6 +106,14 @@ class Plate extends Model
 		unset($this->tastes);
 
 		return $this->priceAvg;
+	}
+
+	public function nextUserTaste($userId) {
+
+		return Taste::where('plate_id', $this->id)->where('user_id', $userId)
+									->where('visit_at', '>=', Carbon::now()->startOfDay())
+									->orderBy('visit_at', 'ASC')->first();
+
 	}
 
 }

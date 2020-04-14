@@ -94,6 +94,11 @@ h3 {
     @apply text-xl font-bold;
 }
 
+h2 {
+	color: $platformMainColor;
+  @apply text-2xl;
+}
+
 /* Styles */
 
 body.dark-theme {
@@ -528,11 +533,6 @@ $breakpoint-md: theme('screens.md');
 	@apply rounded-lg object-contain;
 }
 
-.check-in-icon {
-	height: 24px;
-	@apply inline-block;
-}
-
 .field-icon {
 	height: 20px;
 	@apply inline-block;
@@ -656,8 +656,51 @@ $breakpoint-md: theme('screens.md');
 		@apply fill-current text-purple-600 font-bold;
 }
 
+.plate-schedule {
+	@apply pb-4 mb-2 flex self-center;
+}
+
+.plate-schedule__link {
+	@apply flex border-gray-500 border rounded-lg px-3 py-2 text-gray-500;
+	&:hover {
+		color: $platformMainColor;
+		border-color: $platformMainColor;
+	}
+}
+
+.plate__schedule-next {
+	color: $platformMainColor;
+	border-color: $platformMainColor;
+	@apply text-center pt-0 mb-2 flex self-center border-b;
+}
+
+.check-in-icon {
+	height: 24px;
+	@apply inline-block;
+	animation: jump 4s cubic-bezier(.36,.07,.19,.97) infinite both;
+}
+
+
+@keyframes jump {
+	5%, 45% {transform: translateY($jumpSmallStepUp);}
+	10%, 40% {transform: translateY($jumpSmallStepDown);}
+	15%, 25%, 35% {transform: translateY($jumpBigStepUp);}
+	20%, 30% {transform: translateY($jumpBigStepDown);}
+	50%, 100% {transform: translateY(0px);}
+}
+
 
 @screen md {
+
+	.plate-schedule__link {
+		.check-in-icon {
+			animation: none;
+		}
+		&:hover .check-in-icon {
+			animation: jump 4s cubic-bezier(.36,.07,.19,.97) infinite both;
+		}
+	}
+
 	.form-center-card-ext-p,
 	.card-center-two-columns {
 		.row {
@@ -675,6 +718,23 @@ $breakpoint-md: theme('screens.md');
 			@apply w-2/5 border-0;
 		}
 	}
+}
+
+.footer {
+	@apply text-sm;
+}
+
+.footer__icon-sources {
+	@apply list-disc;
+}
+
+.footer__icon-sources li {
+	display: flex;
+}
+
+.footer__icon-sources img {
+	height: 16px;
+	display: inline-block;
 }
 
 @import "./ratings"

@@ -8,6 +8,7 @@ use App\Models\Plate;
 use App\Models\Taste;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
@@ -33,6 +34,9 @@ class PlateController extends Controller
 			abort(403);
 		}
 
+		setlocale(LC_ALL, 'pt_PT');
+		Carbon::setLocale('pt_PT');
+
 		$plate->averageRating();
 		$plate->averagePrice();
 		$plate->establishment;
@@ -57,8 +61,14 @@ class PlateController extends Controller
 		}
 
 		$latestRatings = $plate->latestRatings();
+		$nextTaste = $plate->nextUserTaste(Auth::id());
+		if ($nextTaste) {
+			/* if ($nextTaste->visit_at->diffInDays(Carbon::now()) */ 
+			/* $nextTaste = $nextTaste->visit_at->locale('pt_PT')->translatedFormat('F \\, d'); */
+			$nextTaste = $nextTaste->visit_at->endOfDay()->locale('pt_PT')->diffForHumans();
+		}
 
-		return view('plate.show', compact('plate', 'latestRatings'));
+		return view('plate.show', compact('plate', 'latestRatings', 'nextTaste'));
 
 	}
 
